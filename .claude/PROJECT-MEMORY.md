@@ -22,6 +22,11 @@ Facts and decisions specific to this repo. Not personal/career info — see [MEM
 - Email: inquiry@louisklock.com — live as of 2026-07-09 (Google Workspace, MX/SPF verified via DNS lookup before swapping the site over). No longer using the exprealty.com placeholder.
 - Office address shown: 1455 NW Leary Way, Suite 400, Seattle, WA 98107. This is intentionally *not* Louis's home address — see privacy rule in [RULES.md](RULES.md) / [MEMORY.md](MEMORY.md).
 
+## Known site gaps (not yet fixed)
+- contact.html's "Scan to Save Our Contact" QR block and the office map are both still explicitly placeholder/decorative (site copy itself says so). Not wired to anything real yet.
+
 ## Decisions log
 - 2026-07-09: Updated contact.html with real phone/email/office address, replacing placeholder data. Used exprealty.com email initially since inquiry@louisklock.com wasn't live yet; used a real office address instead of Louis's home address, per privacy rule.
 - 2026-07-09: louisklock.com email hosting (Google Workspace) confirmed live — MX records point to Google, SPF record present. Swapped contact.html from louis.lock@exprealty.com to inquiry@louisklock.com.
+- 2026-07-09: Site polish pass — replaced dead `href="#"` social links (Instagram, Facebook, TikTok) with real profile URLs across all 11 pages; added `target="_blank" rel="noopener"`. Added eXp Realty brokerage disclosure ("Licensed Real Estate Broker, eXp Realty, LLC — Washington State") to the footer on all 11 pages, since the contact email implied the affiliation but no page stated it (WA broker advertising disclosure norm). Swapped the Formspree `FORM_ENDPOINT` from an unreplaced template placeholder (`mwvdnlrp` — never verified as belonging to Louis) to Louis's confirmed real form (`mdarrrad`) across all 11 pages; removed the now-stale "replace with your Formspree endpoint" comment.
+- 2026-07-09: Verified full site against these memory files — no home-address leaks, office address/phone/email only appear where documented (contact.html), brokerage disclosure and social links present on all 11 pages, no leftover placeholder Formspree ID, no console/network errors on any of the 11 pages, all 3 social profile URLs return HTTP 200.
