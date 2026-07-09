@@ -17,5 +17,10 @@ Facts and decisions specific to this repo. Not personal/career info — see [MEM
 - If/when blog posts, service pages, or CTAs get written around development, lean into this: practical, client-can-do-this framing, not "Louis the developer" framing (that's a later stage).
 - Apply the client-framing rule in [RULES.md](RULES.md) here specifically: development content should read as "here's how we build your roadmap together," not "here's what Louis can build."
 
+## Contact info (public, on contact.html)
+- Phone: (206) 618-6409
+- Email: louis.lock@exprealty.com — **temporary.** True target is inquiry@louisklock.com once email hosting is set up for the louisklock.com domain (domain is owned, mail isn't configured yet). Swap this on the contact page (and its two JS error-message fallbacks) when that's live.
+- Office address shown: 1455 NW Leary Way, Suite 400, Seattle, WA 98107. This is intentionally *not* Louis's home address — see privacy rule in [RULES.md](RULES.md) / [MEMORY.md](MEMORY.md).
+
 ## Decisions log
-- (nothing logged yet — add dated entries here as real decisions get made, e.g. "2026-07-09: decided to keep blog posts under 800 words")
+- 2026-07-09: Updated contact.html with real phone/email/office address, replacing placeholder data. Used exprealty.com email instead of the not-yet-live inquiry@louisklock.com; used a real office address instead of Louis's home address, per privacy rule.
