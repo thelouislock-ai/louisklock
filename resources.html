@@ -165,6 +165,19 @@
   .nform button{background:none;border:none;color:var(--gold);font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;}
   .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:30px;font-size:11px;opacity:0.55;}
   ::selection{background:var(--gold);color:var(--charcoal);}
+
+  /* GUIDE GATE MODAL */
+  .guide-gate-overlay{position:fixed;inset:0;background:rgba(10,9,8,0.82);z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity 0.35s ease;}
+  .guide-gate-overlay.open{opacity:1;visibility:visible;}
+  .guide-gate-modal{background:var(--off-white);color:var(--charcoal);max-width:440px;width:100%;padding:50px 40px;position:relative;}
+  .guide-gate-close{position:absolute;top:18px;right:18px;background:none;border:none;font-size:26px;line-height:1;color:var(--charcoal);cursor:pointer;padding:6px;font-family:'Inter',sans-serif;font-weight:300;}
+  .guide-gate-modal h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;margin:8px 0 14px;}
+  .guide-gate-modal > p{font-size:14px;line-height:1.7;color:var(--graphite);margin-bottom:28px;font-weight:300;}
+  .guide-gate-modal .field{margin-bottom:20px;}
+  .guide-gate-modal .field label{display:block;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px;}
+  .guide-gate-modal .field input{width:100%;background:none;border:none;border-bottom:1px solid rgba(17,17,17,0.25);color:var(--charcoal);font-family:'Inter',sans-serif;font-size:15px;padding:8px 2px;outline:none;}
+  .guide-gate-modal .btn{width:100%;text-align:center;border:none;cursor:pointer;margin-top:6px;}
+  .guide-gate-status{margin-top:16px;font-size:13px;font-family:'Inter',sans-serif;}
 </style>
 </head>
 <body>
@@ -427,6 +440,23 @@
   </div>
 </footer>
 
+<div class="guide-gate-overlay" id="guideGateOverlay">
+  <div class="guide-gate-modal">
+    <button class="guide-gate-close" id="guideGateClose" aria-label="Close">&times;</button>
+    <div class="section-eyebrow">Free Download</div>
+    <h3 id="guideGateTitle">Get the Guide</h3>
+    <p>Enter your info and we'll send you straight to the download &mdash; no spam, ever.</p>
+    <form id="guideGateForm">
+      <div class="field"><label>First Name</label><input type="text" name="first_name" required></div>
+      <div class="field"><label>Email</label><input type="email" name="email" required></div>
+      <input type="hidden" name="_subject" value="Guide Download — Louis Lock">
+      <input type="hidden" name="guide" id="guideGateGuideName" value="">
+      <button type="submit" class="btn btn-primary" id="guideGateSubmitBtn">Get the Guide</button>
+      <div class="guide-gate-status" id="guideGateStatus"></div>
+    </form>
+  </div>
+</div>
+
 <script>
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -521,6 +551,76 @@
         btn.disabled = false;
       }
     });
+  });
+
+  /* ---- Guide Gate: gated PDF downloads ---- */
+  const guideFiles = {
+    "Buyer's Guide": "assets/louis-lock-buyers-guide.pdf"
+  };
+  const gateOverlay = document.getElementById('guideGateOverlay');
+  const gateTitle = document.getElementById('guideGateTitle');
+  const gateGuideName = document.getElementById('guideGateGuideName');
+  const gateForm = document.getElementById('guideGateForm');
+  const gateBtn = document.getElementById('guideGateSubmitBtn');
+  const gateStatus = document.getElementById('guideGateStatus');
+
+  function openGuideGate(guideName){
+    gateTitle.textContent = 'Get the ' + guideName;
+    gateGuideName.value = guideName;
+    gateStatus.textContent = '';
+    gateBtn.disabled = false;
+    gateBtn.textContent = 'Get the Guide';
+    gateOverlay.classList.add('open');
+  }
+  function closeGuideGate(){
+    gateOverlay.classList.remove('open');
+  }
+
+  document.querySelectorAll('.guide-card').forEach(function(card){
+    const title = card.querySelector('h3');
+    if(!title || !guideFiles[title.textContent]) return;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function(e){
+      e.preventDefault();
+      openGuideGate(title.textContent);
+    });
+  });
+
+  document.getElementById('guideGateClose').addEventListener('click', closeGuideGate);
+  gateOverlay.addEventListener('click', function(e){ if(e.target === gateOverlay) closeGuideGate(); });
+
+  gateForm.addEventListener('submit', async function(e){
+    e.preventDefault();
+    gateBtn.disabled = true;
+    gateBtn.textContent = 'Sending...';
+    gateStatus.textContent = '';
+    try{
+      const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(gateForm), headers: { 'Accept': 'application/json' } });
+      if(res.ok){
+        const file = guideFiles[gateGuideName.value];
+        if(file){
+          const a = document.createElement('a');
+          a.href = file;
+          a.download = '';
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+        }
+        gateStatus.style.color = 'var(--gold)';
+        gateStatus.textContent = "Thanks — your download should begin automatically.";
+        gateBtn.textContent = 'Sent!';
+      } else {
+        gateStatus.style.color = '#c0392b';
+        gateStatus.textContent = 'Something went wrong. Please try again or email inquiry@louisklock.com.';
+        gateBtn.disabled = false;
+        gateBtn.textContent = 'Get the Guide';
+      }
+    } catch(err){
+      gateStatus.style.color = '#c0392b';
+      gateStatus.textContent = 'Something went wrong. Please try again or email inquiry@louisklock.com.';
+      gateBtn.disabled = false;
+      gateBtn.textContent = 'Get the Guide';
+    }
   });
 </script>
 
