@@ -23,10 +23,16 @@ Facts and decisions specific to this repo. Not personal/career info — see [MEM
 - Office address shown: 1455 NW Leary Way, Suite 400, Seattle, WA 98107. This is intentionally *not* Louis's home address — see privacy rule in [RULES.md](RULES.md) / [MEMORY.md](MEMORY.md).
 
 ## Known site gaps (not yet fixed)
-- contact.html's "Scan to Save Our Contact" QR block and the office map are both still explicitly placeholder/decorative (site copy itself says so). Not wired to anything real yet.
+- contact.html's office map is still explicitly placeholder/decorative ("stylized for illustration"). Not wired to a real embed yet.
+
+## Linktree
+- Louis's Linktree: https://linktr.ee/thelouislock. Wired into contact.html as a real, generated QR code (`assets/qr-linktree.svg`) plus a text link — replaces the old decorative/fake QR pattern.
+- QR was generated locally in-browser using the kazuhikoarase/qrcode-generator library (MIT, fetched with Louis's explicit approval — see [[feedback-external-downloads]] rule in RULES.md), error correction level H, then recolored to the site's charcoal/off-white palette. Verified structurally correct (finder patterns, module count 33x33 / type 3) but not scanned with a physical phone — worth a real scan test before considering this fully done.
+- Open item: Louis wants the Linktree page itself reskinned to match this same charcoal/gold/off-white theme for visual consistency. Not started.
 
 ## Decisions log
 - 2026-07-09: Updated contact.html with real phone/email/office address, replacing placeholder data. Used exprealty.com email initially since inquiry@louisklock.com wasn't live yet; used a real office address instead of Louis's home address, per privacy rule.
 - 2026-07-09: louisklock.com email hosting (Google Workspace) confirmed live — MX records point to Google, SPF record present. Swapped contact.html from louis.lock@exprealty.com to inquiry@louisklock.com.
 - 2026-07-09: Site polish pass — replaced dead `href="#"` social links (Instagram, Facebook, TikTok) with real profile URLs across all 11 pages; added `target="_blank" rel="noopener"`. Added eXp Realty brokerage disclosure ("Licensed Real Estate Broker, eXp Realty, LLC — Washington State") to the footer on all 11 pages, since the contact email implied the affiliation but no page stated it (WA broker advertising disclosure norm). Swapped the Formspree `FORM_ENDPOINT` from an unreplaced template placeholder (`mwvdnlrp` — never verified as belonging to Louis) to Louis's confirmed real form (`mdarrrad`) across all 11 pages; removed the now-stale "replace with your Formspree endpoint" comment.
 - 2026-07-09: Verified full site against these memory files — no home-address leaks, office address/phone/email only appear where documented (contact.html), brokerage disclosure and social links present on all 11 pages, no leftover placeholder Formspree ID, no console/network errors on any of the 11 pages, all 3 social profile URLs return HTTP 200.
+- 2026-07-09: Replaced contact.html's fake decorative "QR code" pattern with a real, generated QR linking to the Linktree, plus a text link and updated copy ("Scan to Connect" instead of the old vCard-implying "Scan to Save Our Contact," since the QR doesn't actually do a contact-card save).

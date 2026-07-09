@@ -9,6 +9,9 @@ Never send, delete, publish, deploy, or otherwise ship anything externally witho
 
 Always show the thing first and get a yes. This applies even if a prior approval covered something similar — approval is per-action, not standing, unless Louis says "go ahead and always do X."
 
+## External code/downloads
+Never download, fetch, install, or execute code, libraries, or packages from an external/unapproved source (curl/wget of a repo file, npm/pip install, cloning a repo, pulling a script to run) without asking first and naming exactly what and from where. This applies even for small, well-known, reputable sources — the point is Louis gets to see what's being pulled in before it lands or runs, not a judgment call about how trustworthy the source seems.
+
 ## Privacy
 Louis's home/personal address is **never** published or displayed publicly (site, docs, listings, social) by default. Only share it directly with a specific party, in a specific instance, when it's actually needed — and treat that as its own approval-gated action, not a standing permission. See [MEMORY.md](MEMORY.md) for the actual address.
 
