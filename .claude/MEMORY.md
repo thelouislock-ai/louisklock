@@ -18,7 +18,7 @@ See also: [ABOUT.md](ABOUT.md) for static bio info, [PROJECT-MEMORY.md](PROJECT-
 - Personal email: louisklock.re@gmail.com
 - Business/property-info email: louis.lock@exprealty.com
 - Home address: 2306 16th Ave S, Seattle, WA 98144 — **private by default**, only given out when specifically needed (see [RULES.md](RULES.md) Privacy section). Never publish this.
-- Domain `louisklock.com` is purchased; email hosting for it (e.g. `inquiry@louisklock.com`) is not yet configured — see [PROJECT-MEMORY.md](PROJECT-MEMORY.md) open items.
+- Domain `louisklock.com` email hosting (Google Workspace) is live as of 2026-07-09 — inquiry@louisklock.com is the public contact email now used on the site.
 
 ## Open items
-- Set up email hosting for louisklock.com so inquiry@louisklock.com actually works, then swap the site's public contact email over to it (currently using louis.lock@exprealty.com as a working placeholder).
+- (nothing logged yet)

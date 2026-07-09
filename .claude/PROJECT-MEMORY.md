@@ -19,8 +19,9 @@ Facts and decisions specific to this repo. Not personal/career info — see [MEM
 
 ## Contact info (public, on contact.html)
 - Phone: (206) 618-6409
-- Email: louis.lock@exprealty.com — **temporary.** True target is inquiry@louisklock.com once email hosting is set up for the louisklock.com domain (domain is owned, mail isn't configured yet). Swap this on the contact page (and its two JS error-message fallbacks) when that's live.
+- Email: inquiry@louisklock.com — live as of 2026-07-09 (Google Workspace, MX/SPF verified via DNS lookup before swapping the site over). No longer using the exprealty.com placeholder.
 - Office address shown: 1455 NW Leary Way, Suite 400, Seattle, WA 98107. This is intentionally *not* Louis's home address — see privacy rule in [RULES.md](RULES.md) / [MEMORY.md](MEMORY.md).
 
 ## Decisions log
-- 2026-07-09: Updated contact.html with real phone/email/office address, replacing placeholder data. Used exprealty.com email instead of the not-yet-live inquiry@louisklock.com; used a real office address instead of Louis's home address, per privacy rule.
+- 2026-07-09: Updated contact.html with real phone/email/office address, replacing placeholder data. Used exprealty.com email initially since inquiry@louisklock.com wasn't live yet; used a real office address instead of Louis's home address, per privacy rule.
+- 2026-07-09: louisklock.com email hosting (Google Workspace) confirmed live — MX records point to Google, SPF record present. Swapped contact.html from louis.lock@exprealty.com to inquiry@louisklock.com.
