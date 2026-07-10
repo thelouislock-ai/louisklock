@@ -49,6 +49,16 @@
   .mobile-menu.open{transform:translateY(0);}
   .mobile-menu a{color:var(--off-white);text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:32px;}
   .mobile-menu a.gold{color:var(--gold);}
+  .nav-dropdown{position:relative;}
+  .nav-dropdown>a{display:inline-flex;align-items:center;gap:5px;}
+  .nav-dropdown .caret{font-size:8px;opacity:0.7;transform:translateY(1px);}
+  .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.25s ease;}
+  .dropdown-menu-inner{background:rgba(17,17,17,0.98);border:1px solid rgba(200,162,74,0.22);min-width:170px;padding:12px 0;box-shadow:0 18px 36px rgba(0,0,0,0.35);}
+  .dropdown-menu-inner a{display:block;padding:9px 22px;font-size:10.5px;white-space:nowrap;opacity:0.85;}
+  .dropdown-menu-inner a::after{display:none;}
+  .dropdown-menu-inner a:hover{opacity:1;background:rgba(200,162,74,0.08);}
+  .dropdown-menu-inner a.active{color:var(--gold);opacity:1;}
+  .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;}
   @media(max-width:840px){.nav-links{display:none;}.hamburger{display:flex;}}
 
   /* PAGE HERO */
@@ -171,9 +181,16 @@
   <div class="nav-links nav-font">
     <a href="residential.html">Residential</a>
     <a href="commercial.html">Commercial</a>
-    <a href="about.html" class="active">About</a>
-    <a href="resources.html">Resources</a>
-    <a href="blog.html">Journal</a>
+    <div class="nav-dropdown">
+      <a href="resources.html" class="active">Resources<span class="caret">&#9662;</span></a>
+      <div class="dropdown-menu">
+        <div class="dropdown-menu-inner">
+          <a href="about.html" class="active">About</a>
+          <a href="blog.html">Journal</a>
+          <a href="partners.html">Partners</a>
+        </div>
+      </div>
+    </div>
     <a href="contact.html" class="nav-cta">Contact</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -185,6 +202,7 @@
   <a href="about.html" class="gold">About</a>
   <a href="resources.html">Resources</a>
   <a href="blog.html">Journal</a>
+  <a href="partners.html">Partners</a>
   <a href="contact.html">Contact</a>
 </div>
 
@@ -292,6 +310,7 @@
         <a href="about.html">About</a>
         <a href="resources.html">Resources</a>
         <a href="blog.html">Journal</a>
+        <a href="partners.html">Partners</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
