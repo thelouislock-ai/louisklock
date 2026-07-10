@@ -16,7 +16,7 @@ See also: [ABOUT.md](ABOUT.md) for static bio info, [PROJECT-MEMORY.md](PROJECT-
 ## Contact info (preferred)
 - Phone: (206) 618-6409
 - Personal email: louisklock.re@gmail.com
-- Business/property-info email: louis.lock@exprealty.com
+- Business/property-info email: inquiry@louisklock.com (was louis.lock@exprealty.com, retired 2026-07-09 once Google Workspace hosting went live)
 - Home address: 2306 16th Ave S, Seattle, WA 98144 — **private by default**, only given out when specifically needed (see [RULES.md](RULES.md) Privacy section). Never publish this.
 - Domain `louisklock.com` email hosting (Google Workspace) is live as of 2026-07-09 — inquiry@louisklock.com is the public contact email now used on the site.
 
