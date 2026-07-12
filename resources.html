@@ -239,7 +239,7 @@
   <div class="page-hero-inner">
     <div class="hero-eyebrow"><span class="line"></span>Resources</div>
     <h1>Tools and guides,<br>built to <em>educate</em> first.</h1>
-    <p>Everything you need to move forward with confidence &mdash; whether you're buying, selling, investing, or just starting to explore.</p>
+    <p>Everything you need to move forward with confidence, whether you're buying, selling, investing, or just starting to explore.</p>
   </div>
 </section>
 
@@ -310,7 +310,7 @@
   <div class="calc-text">
     <div class="section-eyebrow">Mortgage Calculator</div>
     <h2>Know your numbers<br>before you <em>offer</em>.</h2>
-    <p>Adjust the sliders to estimate your monthly payment. This is a planning tool &mdash; your lender will confirm exact figures based on your full financial picture.</p>
+    <p>Adjust the sliders to estimate your monthly payment. This is a planning tool. Your lender will confirm exact figures based on your full financial picture.</p>
   </div>
   <div class="calc-tool">
     <div class="calc-field">
@@ -332,7 +332,7 @@
     <div class="calc-result">
       <div class="r-label">Estimated Monthly Payment</div>
       <div class="r-value" id="monthlyResult">$4,304</div>
-      <div class="r-sub">Principal &amp; interest only &mdash; excludes taxes, insurance, and HOA dues.</div>
+      <div class="r-sub">Principal &amp; interest only (excludes taxes, insurance, and HOA dues).</div>
     </div>
   </div>
 </section>
@@ -345,7 +345,7 @@
   <div class="faq-list">
     <div class="faq-item open">
       <div class="faq-q"><h4>How much do I need for a down payment?</h4><span class="plus">+</span></div>
-      <div class="faq-a"><p>It varies by loan type &mdash; conventional loans often start around 5&ndash;20%, while some programs allow less. We'll connect you with a lender to find the right fit for your situation.</p></div>
+      <div class="faq-a"><p>It varies by loan type. Conventional loans often start around 5&ndash;20%, while some programs allow less. We'll connect you with a lender to find the right fit for your situation.</p></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><h4>How long does the buying process take?</h4><span class="plus">+</span></div>
@@ -353,7 +353,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q"><h4>Do you work with first-time buyers?</h4><span class="plus">+</span></div>
-      <div class="faq-a"><p>Absolutely &mdash; it's one of our favorite parts of the job. We take extra time to walk through every step so you feel confident, not overwhelmed.</p></div>
+      <div class="faq-a"><p>Absolutely. It's one of our favorite parts of the job. We take extra time to walk through every step so you feel confident, not overwhelmed.</p></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><h4>What areas do you serve?</h4><span class="plus">+</span></div>
@@ -361,7 +361,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q"><h4>Do you handle commercial transactions too?</h4><span class="plus">+</span></div>
-      <div class="faq-a"><p>Yes &mdash; from acquisition and leasing to ground-up development, our commercial practice brings the same data-driven strategy to every deal.</p></div>
+      <div class="faq-a"><p>Yes. From acquisition and leasing to ground-up development, our commercial practice brings the same data-driven strategy to every deal.</p></div>
     </div>
   </div>
 </section>
@@ -457,7 +457,7 @@
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 Louis Lock Real Estate. Seattle, WA.</span>
-    <span>Licensed Real Estate Broker, eXp Realty, LLC &mdash; Washington State</span>
+    <span>Licensed Real Estate Broker, eXp Realty, LLC, Washington State</span>
   </div>
 </footer>
 
@@ -466,11 +466,11 @@
     <button class="guide-gate-close" id="guideGateClose" aria-label="Close">&times;</button>
     <div class="section-eyebrow">Free Download</div>
     <h3 id="guideGateTitle">Get the Guide</h3>
-    <p>Enter your info and we'll send you straight to the download &mdash; no spam, ever.</p>
+    <p>Enter your info and we'll send you straight to the download. No spam, ever.</p>
     <form id="guideGateForm">
       <div class="field"><label>First Name</label><input type="text" name="first_name" required></div>
       <div class="field"><label>Email</label><input type="email" name="email" required></div>
-      <input type="hidden" name="_subject" value="Guide Download — Louis Lock">
+      <input type="hidden" name="_subject" value="Guide Download: Louis Lock">
       <input type="hidden" name="guide" id="guideGateGuideName" value="">
       <button type="submit" class="btn btn-primary" id="guideGateSubmitBtn">Get the Guide</button>
       <div class="guide-gate-status" id="guideGateStatus"></div>
@@ -555,7 +555,7 @@
       try{
         const fd = new FormData();
         fd.append('email', email);
-        fd.append('_subject', 'Newsletter Signup — Louis Lock');
+        fd.append('_subject', 'Newsletter Signup: Louis Lock');
         fd.append('form_type', 'newsletter');
         fd.append('page', window.location.pathname);
         const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
@@ -628,7 +628,7 @@
           a.remove();
         }
         gateStatus.style.color = 'var(--gold)';
-        gateStatus.textContent = "Thanks — your download should begin automatically.";
+        gateStatus.textContent = "Thanks. Your download should begin automatically.";
         gateBtn.textContent = 'Sent!';
       } else {
         gateStatus.style.color = '#c0392b';
