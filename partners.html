@@ -76,10 +76,27 @@
   .reveal.in{opacity:1;transform:translateY(0);}
   .section-eyebrow{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
 
+  /* PARTNER NETWORK GRID */
+  .partners{padding:130px 5vw 40px;background:var(--off-white);}
+  .partners-head{max-width:640px;margin-bottom:70px;}
+  .partners-head h2{font-size:clamp(32px,3.8vw,50px);line-height:1.16;}
+  .partners-head h2 em{font-style:italic;color:var(--gold);}
+  .partners-head p{margin-top:20px;font-size:15px;line-height:1.8;color:var(--graphite);font-weight:300;max-width:520px;}
+  .partner-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--charcoal);}
+  @media(max-width:760px){.partner-cards{grid-template-columns:1fr;}}
+  .partner-card{background:var(--charcoal);padding:56px 44px;display:flex;flex-direction:column;gap:22px;}
+  .partner-mark{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:500;color:var(--off-white);line-height:1.28;}
+  .partner-mark em{font-style:italic;color:var(--gold);}
+  .partner-tag{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.9;}
+  .partner-card p{font-size:14px;line-height:1.85;color:var(--silver);font-weight:300;}
+  .partner-link{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--off-white);text-decoration:none;display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding-top:8px;}
+  .partner-link .arrow{color:var(--gold);transition:transform 0.3s;}
+  .partner-link:hover .arrow{transform:translateX(6px);}
+
   /* IN PROGRESS PANEL */
-  .in-progress{padding:150px 5vw;background:var(--off-white);}
-  .in-progress-inner{max-width:680px;margin:0 auto;text-align:center;border:1px solid rgba(17,17,17,0.12);padding:80px 48px;}
-  .in-progress-inner h2{font-size:clamp(26px,3.2vw,36px);margin-bottom:22px;line-height:1.25;}
+  .in-progress{padding:100px 5vw 150px;background:var(--off-white);}
+  .in-progress-inner{max-width:680px;margin:0 auto;text-align:center;border:1px solid rgba(17,17,17,0.12);padding:64px 48px;}
+  .in-progress-inner h2{font-size:clamp(24px,2.8vw,32px);margin-bottom:22px;line-height:1.25;}
   .in-progress-inner h2 em{font-style:italic;color:var(--gold);}
   .in-progress-inner p{font-size:14.5px;line-height:1.85;color:var(--graphite);font-weight:300;max-width:480px;margin:0 auto;}
 
@@ -156,14 +173,36 @@
   <div class="page-hero-inner">
     <div class="hero-eyebrow"><span class="line"></span>Partners</div>
     <h1>Built on relationships <em>worth trusting</em>.</h1>
-    <p>The lenders, inspectors, and specialists Louis works with to get deals across the finish line, and the professional standards behind the name.</p>
+    <p>From global commercial connections to the lenders, inspectors, and specialists who get deals across the finish line: the network behind every transaction.</p>
+  </div>
+</section>
+
+<section class="partners reveal">
+  <div class="partners-head">
+    <div class="section-eyebrow">Strategic Network</div>
+    <h2>Reach beyond <em>one brokerage</em>.</h2>
+    <p>Louis works within two networks built for exactly this kind of scale, so a client's next move isn't limited by what's local, or by one firm's bandwidth.</p>
+  </div>
+  <div class="partner-cards">
+    <div class="partner-card">
+      <div class="partner-tag">Commercial Referral Network</div>
+      <div class="partner-mark">Renaissance <em>Global Network</em></div>
+      <p>A global consortium of independent commercial real estate professionals and firms. When a client's deal calls for expertise or capital beyond the Puget Sound market, this network gives Louis a vetted, international bench to draw on: advisory guidance, referral partners, and deal support across borders.</p>
+      <a href="https://renaissanceglobalnetwork.com" target="_blank" rel="noopener" class="partner-link">Visit Site <span class="arrow">&#8594;</span></a>
+    </div>
+    <div class="partner-card">
+      <div class="partner-tag">Commercial Brokerage Division</div>
+      <div class="partner-mark">eXp <em>Commercial</em></div>
+      <p>The commercial division of eXp Realty, the brokerage Louis is licensed under. It brings investment sales expertise, nationwide market data, and specialized commercial resources to sit alongside Louis's on-the-ground knowledge of Seattle.</p>
+      <a href="https://www.expcommercial.com" target="_blank" rel="noopener" class="partner-link">Visit Site <span class="arrow">&#8594;</span></a>
+    </div>
   </div>
 </section>
 
 <section class="in-progress reveal">
   <div class="in-progress-inner">
-    <h2>This page is <em>under construction</em>.</h2>
-    <p>We're putting together the network Louis works with (lenders, inspectors, title &amp; escrow, and trusted local partners) to give you a clear picture of the team behind every transaction. Check back soon.</p>
+    <h2>The local network is <em>still being added</em>.</h2>
+    <p>We're putting together the lenders, inspectors, title &amp; escrow, and other trusted local partners Louis works with, to give you a clear picture of the full team behind every transaction. Check back soon.</p>
   </div>
 </section>
 
