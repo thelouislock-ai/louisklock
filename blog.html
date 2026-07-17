@@ -59,6 +59,10 @@
   .dropdown-menu-inner a:hover{opacity:1;background:rgba(200,162,74,0.08);}
   .dropdown-menu-inner a.active{color:var(--gold);opacity:1;}
   .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;}
+  .dropdown-menu.force-closed{opacity:0 !important;visibility:hidden !important;pointer-events:none !important;}
+  .dropdown-menu-inner{position:relative;}
+  .dropdown-close{position:absolute;top:6px;right:8px;background:none;border:none;color:var(--gold);font-size:15px;line-height:1;cursor:pointer;padding:4px 6px;opacity:0.65;transition:opacity 0.2s;}
+  .dropdown-close:hover{opacity:1;}
   @media(max-width:840px){.nav-links{display:none;}.hamburger{display:flex;}}
 
   .page-hero{position:relative;min-height:52vh;display:flex;align-items:flex-end;overflow:hidden;background:radial-gradient(ellipse 1100px 600px at 50% 108%, rgba(200,162,74,0.28), transparent 65%), linear-gradient(180deg,#0b0a09 0%,#171310 45%,#1d1610 100%);}
@@ -149,6 +153,7 @@
       <a href="resources.html" class="active">Resources<span class="caret">&#9662;</span></a>
       <div class="dropdown-menu">
         <div class="dropdown-menu-inner">
+          <button class="dropdown-close" aria-label="Close menu" type="button">&times;</button>
           <a href="about.html">About</a>
           <a href="blog.html" class="active">Journal</a>
           <a href="partners.html">Partners</a>
@@ -324,6 +329,20 @@
       navLinksEl.classList.toggle('collapsed');
     });
   }
+  document.querySelectorAll('.dropdown-close').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var menu = btn.closest('.dropdown-menu');
+      if (menu) menu.classList.add('force-closed');
+    });
+  });
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd){
+    dd.addEventListener('mouseleave', function(){
+      var menu = dd.querySelector('.dropdown-menu');
+      if (menu) menu.classList.remove('force-closed');
+    });
+  });
   hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }));
   const revealEls = document.querySelectorAll('.reveal');
