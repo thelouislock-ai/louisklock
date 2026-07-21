@@ -101,11 +101,6 @@
   .story-photo{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#2a2318 0%,#111111 100%);}
   .story-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .story-photo-frame{position:absolute;inset:16px;border:1px solid rgba(200,162,74,0.4);pointer-events:none;}
-  .story-photo-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;opacity:0.6;text-align:center;padding:20px;}
-  .story-photo.split img{position:absolute;width:100%;height:50%;object-fit:cover;}
-  .story-photo.split img:first-of-type{top:0;bottom:auto;}
-  .story-photo.split img:last-of-type{top:auto;bottom:0;}
-  .story-photo.split::after{content:'';position:absolute;top:50%;left:16px;right:16px;height:1px;background:rgba(200,162,74,0.4);z-index:2;}
   .story-tag{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
   .story h3{font-size:clamp(24px,2.6vw,32px);margin-bottom:16px;line-height:1.25;}
   .story h3 em{font-style:italic;color:var(--gold);}
@@ -215,9 +210,8 @@
   </div>
 
   <div class="story">
-    <div class="story-photo split">
+    <div class="story-photo">
       <img src="assets/testimonials/phuong-victor.jpg" alt="Phuong and Victor with Louis in their new kitchen">
-      <img src="assets/testimonials/phuong-parents.jpg" alt="Phuong's parents with Louis at their sold home">
       <div class="story-photo-frame"></div>
     </div>
     <div>
@@ -230,8 +224,7 @@
 
   <div class="story">
     <div class="story-photo">
-      <div class="story-photo-placeholder">Photo coming soon</div>
-      <img src="" alt="Rich and Joy's home" style="display:none;">
+      <img src="assets/testimonials/rich-joy.jpg" alt="Rich and Joy with Louis at their new home">
       <div class="story-photo-frame"></div>
     </div>
     <div>
