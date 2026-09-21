@@ -9,12 +9,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --gold:#C8A24A;
-    --champagne:#D8BF72;
-    --charcoal:#111111;
-    --graphite:#2D2D2D;
-    --off-white:#F5F3EF;
-    --silver:#BFC4C9;
+    /* Sound & Patina: cool water structure on a warm linen ground */
+    --gold:#2F6D5C;          /* verdigris, accent on LIGHT grounds */
+    --champagne:#DE9C8D;     /* alpenglow, display emphasis on DARK grounds */
+    --charcoal:#1B2B31;      /* deep water */
+    --graphite:#34474C;      /* body text on light */
+    --off-white:#EEEAE3;     /* warm linen */
+    --silver:#C3C9C4;        /* muted text on dark */
+    --alpenglow:#964F40;     /* rare warm note on light grounds */
+  }
+  /* Dark containers retint the accent so it stays legible.
+     Custom properties inherit, so every descendant using var(--gold) follows. */
+  nav, .mobile-menu, .dropdown-menu-inner, footer,
+  .hero, .page-hero, .article-hero, .cta-band, .article-cta-box,
+  .contact-info, .featured-card, .flow-section, .guides-grid, .guide-card,
+  .mission-full, .partner-cards, .partner-card, .paths-grid, .path-card,
+  .services-grid, .statement, .strategy, .team-grid, .team-card,
+  .values, .value-card, .map-section, .map-wrap, .guide-gate-overlay,
+  .qr-box, .story-photo, .team-photo, .bio-photo,
+  .calc, .development{
+    --gold:#77B5A2;          /* verdigris light */
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -48,7 +62,7 @@
     padding:16px 5vw;
     background:rgba(17,17,17,0.94);
     backdrop-filter:blur(14px);
-    box-shadow:0 1px 0 rgba(200,162,74,0.15);
+    box-shadow:0 1px 0 rgba(119,181,162,0.15);
   }
   .logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none;}
   .logo-mark img{height:38px;width:auto;transition:height 0.5s;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.25));}
@@ -96,10 +110,10 @@
   .nav-dropdown>a{display:inline-flex;align-items:center;gap:5px;}
   .nav-dropdown .caret{font-size:8px;opacity:0.7;transform:translateY(1px);}
   .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.25s ease;}
-  .dropdown-menu-inner{background:rgba(17,17,17,0.98);border:1px solid rgba(200,162,74,0.22);min-width:170px;padding:12px 0;box-shadow:0 18px 36px rgba(0,0,0,0.35);}
+  .dropdown-menu-inner{background:rgba(17,17,17,0.98);border:1px solid rgba(119,181,162,0.22);min-width:170px;padding:12px 0;box-shadow:0 18px 36px rgba(0,0,0,0.35);}
   .dropdown-menu-inner a{display:block;padding:9px 22px;font-size:10.5px;white-space:nowrap;opacity:0.85;}
   .dropdown-menu-inner a::after{display:none;}
-  .dropdown-menu-inner a:hover{opacity:1;background:rgba(200,162,74,0.08);}
+  .dropdown-menu-inner a:hover{opacity:1;background:rgba(119,181,162,0.08);}
   .dropdown-menu-inner a.active{color:var(--gold);opacity:1;}
   .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;}
   .dropdown-menu.force-closed{opacity:0 !important;visibility:hidden !important;pointer-events:none !important;}
@@ -118,8 +132,8 @@
     display:flex;align-items:flex-end;
     overflow:hidden;
     background:
-      radial-gradient(ellipse 1100px 600px at 50% 108%, rgba(200,162,74,0.30), transparent 65%),
-      linear-gradient(180deg,#0b0a09 0%,#171310 45%,#1d1610 100%);
+      radial-gradient(ellipse 1100px 600px at 50% 108%, rgba(119,181,162,0.30), transparent 65%),
+      linear-gradient(180deg,#070B0D 0%,#0E1619 45%,#10191D 100%);
   }
   .skyline{position:absolute;bottom:0;left:0;right:0;width:100%;opacity:0.95;}
   .hero-vignette{position:absolute;inset:0;background:linear-gradient(0deg, rgba(10,9,8,0.55) 0%, transparent 38%);}
@@ -160,7 +174,7 @@
     padding:15px 30px;text-decoration:none;transition:all 0.35s ease;display:inline-block;
   }
   .btn-primary{background:var(--gold);color:var(--charcoal);}
-  .btn-primary:hover{background:var(--champagne);box-shadow:0 0 26px rgba(200,162,74,0.4);}
+  .btn-primary:hover{background:var(--champagne);box-shadow:0 0 26px rgba(119,181,162,0.4);}
   .btn-outline{border:1px solid rgba(245,243,239,0.4);color:var(--off-white);}
   .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
 
@@ -175,7 +189,7 @@
   /* ---------- STATEMENT BAND (full bleed nature scene) ---------- */
   .statement{
     position:relative;min-height:78vh;display:flex;align-items:flex-end;
-    background:linear-gradient(160deg,#1a2420 0%,#25332c 55%,#33443a 100%);
+    background:linear-gradient(160deg,#162328 0%,#203238 55%,#2B434C 100%);
     overflow:hidden;
   }
   .statement-art{position:absolute;inset:0;opacity:0.9;}
@@ -274,9 +288,9 @@
   /* ---------- CTA ---------- */
   .cta-band{
     position:relative;padding:170px 5vw;text-align:center;color:var(--off-white);overflow:hidden;
-    background:linear-gradient(160deg,#1a1712 0%,#111111 60%);
+    background:linear-gradient(160deg,#10191C 0%,#0C1316 60%);
   }
-  .cta-band::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%, rgba(200,162,74,0.18), transparent 60%);}
+  .cta-band::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%, rgba(119,181,162,0.18), transparent 60%);}
   .cta-band-inner{position:relative;z-index:2;}
   .cta-band h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:28px;font-weight:400;}
   .cta-band h2 em{font-style:italic;color:var(--champagne);}
@@ -350,17 +364,17 @@
   <svg class="skyline" viewBox="0 0 1440 420" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#2a1f14"/>
-        <stop offset="100%" stop-color="#0d0b09"/>
+        <stop offset="0%" stop-color="#162328"/>
+        <stop offset="100%" stop-color="#080C0E"/>
       </linearGradient>
     </defs>
     <polygon points="0,420 0,300 30,300 30,260 55,260 55,310 90,310 90,220 130,220 130,340 170,340 170,270 210,270 210,360 250,360 250,230 300,230 300,140 330,140 330,80 355,80 355,40 380,80 380,140 405,140 405,300 450,300 450,240 490,240 490,340 530,340 530,190 570,190 570,300 610,300 610,250 650,250 650,320 690,320 690,150 740,150 740,240 780,240 780,340 820,340 820,210 860,210 860,300 900,300 900,120 940,120 940,280 980,280 980,360 1020,360 1020,240 1060,240 1060,320 1100,320 1100,180 1140,180 1140,300 1180,300 1180,360 1220,360 1220,220 1260,220 1260,340 1300,340 1300,260 1340,260 1340,320 1380,320 1380,280 1440,280 1440,420" fill="url(#sky1)"/>
-    <polygon points="300,230 300,140 330,140 330,80 355,80 355,40 380,80 380,140 405,140 405,230" fill="#171310"/>
+    <polygon points="300,230 300,140 330,140 330,80 355,80 355,40 380,80 380,140 405,140 405,230" fill="#0E1619"/>
     <g opacity="0.55">
-      <polygon points="60,420 90,300 120,420" fill="#0a0908"/>
-      <polygon points="140,420 185,260 230,420" fill="#0a0908"/>
-      <polygon points="1250,420 1300,280 1350,420" fill="#0a0908"/>
-      <polygon points="1180,420 1220,320 1260,420" fill="#0a0908"/>
+      <polygon points="60,420 90,300 120,420" fill="#060A0C"/>
+      <polygon points="140,420 185,260 230,420" fill="#060A0C"/>
+      <polygon points="1250,420 1300,280 1350,420" fill="#060A0C"/>
+      <polygon points="1180,420 1220,320 1260,420" fill="#060A0C"/>
     </g>
   </svg>
   <div class="hero-vignette"></div>
@@ -385,18 +399,18 @@
   <svg class="statement-art" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="forestGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#1a2420"/>
-        <stop offset="100%" stop-color="#0e1512"/>
+        <stop offset="0%" stop-color="#162328"/>
+        <stop offset="100%" stop-color="#0D1416"/>
       </linearGradient>
       <linearGradient id="sunGlow" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#D8BF72" stop-opacity="0.55"/>
-        <stop offset="100%" stop-color="#D8BF72" stop-opacity="0"/>
+        <stop offset="0%" stop-color="#DE9C8D" stop-opacity="0.55"/>
+        <stop offset="100%" stop-color="#DE9C8D" stop-opacity="0"/>
       </linearGradient>
     </defs>
     <rect width="1440" height="700" fill="url(#forestGrad)"/>
     <circle cx="1220" cy="230" r="220" fill="url(#sunGlow)"/>
-    <circle cx="1220" cy="230" r="56" fill="#D8BF72" opacity="0.85"/>
-    <g fill="#0e1512">
+    <circle cx="1220" cy="230" r="56" fill="#DE9C8D" opacity="0.85"/>
+    <g fill="#0D1416">
       <polygon points="1050,700 1090,560 1130,700"/>
       <polygon points="1000,700 1050,520 1100,700"/>
       <polygon points="150,700 220,420 290,700"/>
@@ -406,7 +420,7 @@
       <polygon points="1300,700 1360,560 1420,700"/>
       <polygon points="-20,700 40,500 100,700"/>
     </g>
-    <g fill="#131c18" opacity="0.9">
+    <g fill="#111B1E" opacity="0.9">
       <polygon points="400,700 470,380 540,700"/>
       <polygon points="500,700 600,300 700,700"/>
       <polygon points="650,700 720,420 790,700"/>
@@ -433,14 +447,14 @@
   <div class="services-grid">
     <div class="service-card" id="residential">
       <svg class="service-art" viewBox="0 0 600 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="resGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3a3226"/><stop offset="100%" stop-color="#171310"/></linearGradient></defs>
+        <defs><linearGradient id="resGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#23363D"/><stop offset="100%" stop-color="#0E1619"/></linearGradient></defs>
         <rect width="600" height="700" fill="url(#resGrad)"/>
-        <rect x="120" y="300" width="360" height="260" fill="#221c14"/>
-        <rect x="150" y="220" width="140" height="90" fill="#221c14"/>
-        <rect x="170" y="350" width="50" height="70" fill="#C8A24A" opacity="0.5"/>
-        <rect x="260" y="350" width="50" height="70" fill="#C8A24A" opacity="0.3"/>
-        <rect x="350" y="350" width="90" height="90" fill="#C8A24A" opacity="0.35"/>
-        <line x1="0" y1="560" x2="600" y2="560" stroke="#0d0a08" stroke-width="4"/>
+        <rect x="120" y="300" width="360" height="260" fill="#131F23"/>
+        <rect x="150" y="220" width="140" height="90" fill="#131F23"/>
+        <rect x="170" y="350" width="50" height="70" fill="#DE9C8D" opacity="0.5"/>
+        <rect x="260" y="350" width="50" height="70" fill="#DE9C8D" opacity="0.3"/>
+        <rect x="350" y="350" width="90" height="90" fill="#DE9C8D" opacity="0.35"/>
+        <line x1="0" y1="560" x2="600" y2="560" stroke="#080C0D" stroke-width="4"/>
       </svg>
       <div class="service-shade"></div>
       <div class="service-content">
@@ -452,19 +466,19 @@
     </div>
     <div class="service-card" id="commercial">
       <svg class="service-art" viewBox="0 0 600 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="comGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2d2d2d"/><stop offset="100%" stop-color="#111111"/></linearGradient></defs>
+        <defs><linearGradient id="comGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#20333A"/><stop offset="100%" stop-color="#0C1316"/></linearGradient></defs>
         <rect width="600" height="700" fill="url(#comGrad)"/>
-        <rect x="140" y="120" width="90" height="440" fill="#1c1c1c"/>
-        <rect x="250" y="200" width="90" height="360" fill="#221f1a"/>
-        <rect x="360" y="60" width="90" height="500" fill="#1c1c1c"/>
-        <g fill="#C8A24A" opacity="0.4">
+        <rect x="140" y="120" width="90" height="440" fill="#142024"/>
+        <rect x="250" y="200" width="90" height="360" fill="#162226"/>
+        <rect x="360" y="60" width="90" height="500" fill="#142024"/>
+        <g fill="#DE9C8D" opacity="0.4">
           <rect x="155" y="150" width="16" height="20"/><rect x="185" y="150" width="16" height="20"/>
           <rect x="155" y="190" width="16" height="20"/><rect x="185" y="190" width="16" height="20"/>
           <rect x="265" y="230" width="16" height="20"/><rect x="295" y="230" width="16" height="20"/>
           <rect x="375" y="100" width="16" height="20"/><rect x="405" y="100" width="16" height="20"/>
           <rect x="375" y="150" width="16" height="20"/><rect x="405" y="150" width="16" height="20"/>
         </g>
-        <line x1="0" y1="560" x2="600" y2="560" stroke="#0d0a08" stroke-width="4"/>
+        <line x1="0" y1="560" x2="600" y2="560" stroke="#080C0D" stroke-width="4"/>
       </svg>
       <div class="service-shade"></div>
       <div class="service-content">

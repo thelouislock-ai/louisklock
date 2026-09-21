@@ -9,12 +9,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --gold:#C8A24A;
-    --champagne:#D8BF72;
-    --charcoal:#111111;
-    --graphite:#2D2D2D;
-    --off-white:#F5F3EF;
-    --silver:#BFC4C9;
+    /* Sound & Patina: cool water structure on a warm linen ground */
+    --gold:#2F6D5C;          /* verdigris, accent on LIGHT grounds */
+    --champagne:#DE9C8D;     /* alpenglow, display emphasis on DARK grounds */
+    --charcoal:#1B2B31;      /* deep water */
+    --graphite:#34474C;      /* body text on light */
+    --off-white:#EEEAE3;     /* warm linen */
+    --silver:#C3C9C4;        /* muted text on dark */
+    --alpenglow:#964F40;     /* rare warm note on light grounds */
+  }
+  /* Dark containers retint the accent so it stays legible.
+     Custom properties inherit, so every descendant using var(--gold) follows. */
+  nav, .mobile-menu, .dropdown-menu-inner, footer,
+  .hero, .page-hero, .article-hero, .cta-band, .article-cta-box,
+  .contact-info, .featured-card, .flow-section, .guides-grid, .guide-card,
+  .mission-full, .partner-cards, .partner-card, .paths-grid, .path-card,
+  .services-grid, .statement, .strategy, .team-grid, .team-card,
+  .values, .value-card, .map-section, .map-wrap, .guide-gate-overlay,
+  .qr-box, .story-photo, .team-photo, .bio-photo,
+  .calc, .development{
+    --gold:#77B5A2;          /* verdigris light */
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -28,7 +42,7 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
   /* NAV */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:26px 5vw;transition:all 0.5s cubic-bezier(.22,.61,.36,1);background:rgba(17,17,17,0.94);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(200,162,74,0.15);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:26px 5vw;transition:all 0.5s cubic-bezier(.22,.61,.36,1);background:rgba(17,17,17,0.94);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(119,181,162,0.15);}
   .logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none;}
   .logo-mark img{height:32px;width:auto;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.25));}
   .nav-links{display:flex;gap:38px;align-items:center;}
@@ -61,10 +75,10 @@
   .nav-dropdown>a{display:inline-flex;align-items:center;gap:5px;}
   .nav-dropdown .caret{font-size:8px;opacity:0.7;transform:translateY(1px);}
   .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.25s ease;}
-  .dropdown-menu-inner{background:rgba(17,17,17,0.98);border:1px solid rgba(200,162,74,0.22);min-width:170px;padding:12px 0;box-shadow:0 18px 36px rgba(0,0,0,0.35);}
+  .dropdown-menu-inner{background:rgba(17,17,17,0.98);border:1px solid rgba(119,181,162,0.22);min-width:170px;padding:12px 0;box-shadow:0 18px 36px rgba(0,0,0,0.35);}
   .dropdown-menu-inner a{display:block;padding:9px 22px;font-size:10.5px;white-space:nowrap;opacity:0.85;}
   .dropdown-menu-inner a::after{display:none;}
-  .dropdown-menu-inner a:hover{opacity:1;background:rgba(200,162,74,0.08);}
+  .dropdown-menu-inner a:hover{opacity:1;background:rgba(119,181,162,0.08);}
   .dropdown-menu-inner a.active{color:var(--gold);opacity:1;}
   .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;}
   .dropdown-menu.force-closed{opacity:0 !important;visibility:hidden !important;pointer-events:none !important;}
@@ -75,7 +89,7 @@
 
   /* PAGE HERO */
   .page-hero{position:relative;min-height:56vh;display:flex;align-items:flex-end;overflow:hidden;
-    background:radial-gradient(ellipse 1100px 600px at 50% 108%, rgba(200,162,74,0.28), transparent 65%), linear-gradient(180deg,#0b0a09 0%,#171310 45%,#1d1610 100%);}
+    background:radial-gradient(ellipse 1100px 600px at 50% 108%, rgba(119,181,162,0.28), transparent 65%), linear-gradient(180deg,#070B0D 0%,#0E1619 45%,#10191D 100%);}
   .page-hero-art{position:absolute;inset:0;opacity:0.75;}
   .hero-vignette{position:absolute;inset:0;background:linear-gradient(0deg, rgba(10,9,8,0.6) 0%, transparent 40%);}
   .page-hero-inner{position:relative;z-index:5;width:100%;padding:170px 5vw 80px;}
@@ -92,9 +106,9 @@
   /* HEADSHOT / BIO */
   .bio{display:grid;grid-template-columns:0.45fr 1.55fr;background:var(--off-white);align-items:center;}
   @media(max-width:860px){.bio{grid-template-columns:1fr;}}
-  .bio-photo{position:relative;width:290px;height:340px;margin:0 auto;overflow:hidden;background:linear-gradient(160deg,#2a2318 0%,#111111 100%);}
+  .bio-photo{position:relative;width:290px;height:340px;margin:0 auto;overflow:hidden;background:linear-gradient(160deg,#18252A 0%,#0C1316 100%);}
   @media(max-width:860px){.bio-photo{width:230px;height:260px;}}
-  .bio-photo-frame{position:absolute;inset:20px;border:1px solid rgba(200,162,74,0.4);z-index:2;pointer-events:none;}
+  .bio-photo-frame{position:absolute;inset:20px;border:1px solid rgba(119,181,162,0.4);z-index:2;pointer-events:none;}
   .bio-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 10%;z-index:1;}
   .bio-text{padding:120px 6vw;display:flex;flex-direction:column;justify-content:center;}
   .bio-text .section-eyebrow{margin-bottom:20px;}
@@ -118,7 +132,7 @@
   .value-card p{font-size:13px;color:var(--silver);line-height:1.7;font-weight:300;}
 
   /* MISSION + FLOW */
-  .mission-full{position:relative;padding:150px 5vw;background:linear-gradient(160deg,#1a2420 0%,#25332c 55%,#33443a 100%);overflow:hidden;text-align:center;}
+  .mission-full{position:relative;padding:150px 5vw;background:linear-gradient(160deg,#162328 0%,#203238 55%,#2B434C 100%);overflow:hidden;text-align:center;}
   .mission-art{position:absolute;inset:0;opacity:0.55;}
   .mission-shade{position:absolute;inset:0;background:linear-gradient(0deg, rgba(10,12,10,0.55) 0%, rgba(10,12,10,0.15) 60%);}
   .mission-inner{position:relative;z-index:3;}
@@ -129,7 +143,7 @@
   .flow-path{position:relative;max-width:920px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;}
   .flow-path::before{content:'';position:absolute;top:6px;left:6%;right:6%;height:1px;background:linear-gradient(90deg, transparent, var(--gold) 15%, var(--gold) 85%, transparent);}
   .flow-node{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px;flex:1;}
-  .flow-node .dot{width:13px;height:13px;border-radius:50%;border:1.5px solid var(--gold);background:#1a2420;z-index:2;}
+  .flow-node .dot{width:13px;height:13px;border-radius:50%;border:1.5px solid var(--gold);background:#162328;z-index:2;}
   .flow-node span{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--off-white);max-width:130px;}
   .flow-node small{display:block;margin-top:8px;font-family:'Inter',sans-serif;font-size:11px;color:var(--silver);text-transform:none;letter-spacing:0;line-height:1.5;font-weight:300;}
   @media(max-width:760px){
@@ -153,15 +167,15 @@
   .serve-card p{font-size:13px;color:var(--graphite);line-height:1.65;font-weight:300;opacity:0.85;}
 
   /* CTA */
-  .cta-band{position:relative;padding:170px 5vw;text-align:center;color:var(--off-white);overflow:hidden;background:linear-gradient(160deg,#1a1712 0%,#111111 60%);}
-  .cta-band::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%, rgba(200,162,74,0.18), transparent 60%);}
+  .cta-band{position:relative;padding:170px 5vw;text-align:center;color:var(--off-white);overflow:hidden;background:linear-gradient(160deg,#10191C 0%,#0C1316 60%);}
+  .cta-band::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%, rgba(119,181,162,0.18), transparent 60%);}
   .cta-band-inner{position:relative;z-index:2;}
   .cta-band h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:28px;font-weight:400;}
   .cta-band h2 em{font-style:italic;color:var(--champagne);}
   .cta-band p{color:var(--silver);max-width:520px;margin:0 auto 44px;font-size:15px;font-weight:300;}
   .btn{font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;padding:15px 30px;text-decoration:none;transition:all 0.35s ease;display:inline-block;}
   .btn-primary{background:var(--gold);color:var(--charcoal);}
-  .btn-primary:hover{background:var(--champagne);box-shadow:0 0 26px rgba(200,162,74,0.4);}
+  .btn-primary:hover{background:var(--champagne);box-shadow:0 0 26px rgba(119,181,162,0.4);}
 
   /* FOOTER */
   footer{background:var(--charcoal);color:var(--silver);padding:90px 5vw 34px;}
@@ -226,9 +240,9 @@
 
 <section class="page-hero">
   <svg class="page-hero-art" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="ah" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a2318"/><stop offset="100%" stop-color="#0d0b09"/></linearGradient></defs>
+    <defs><linearGradient id="ah" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#18252A"/><stop offset="100%" stop-color="#080C0E"/></linearGradient></defs>
     <rect width="1440" height="500" fill="url(#ah)"/>
-    <g fill="#0a0908" opacity="0.5">
+    <g fill="#060A0C" opacity="0.5">
       <polygon points="80,500 150,300 220,500"/><polygon points="1220,500 1290,280 1360,500"/>
       <polygon points="380,500 430,340 480,500"/><polygon points="960,500 1020,320 1080,500"/>
     </g>
@@ -258,12 +272,12 @@
 
 <section class="mission-full reveal">
   <svg class="mission-art" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="mg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a2420"/><stop offset="100%" stop-color="#0e1512"/></linearGradient>
-    <linearGradient id="sun4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D8BF72" stop-opacity="0.45"/><stop offset="100%" stop-color="#D8BF72" stop-opacity="0"/></linearGradient></defs>
+    <defs><linearGradient id="mg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#162328"/><stop offset="100%" stop-color="#0D1416"/></linearGradient>
+    <linearGradient id="sun4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DE9C8D" stop-opacity="0.45"/><stop offset="100%" stop-color="#DE9C8D" stop-opacity="0"/></linearGradient></defs>
     <rect width="1440" height="700" fill="url(#mg)"/>
     <circle cx="220" cy="180" r="200" fill="url(#sun4)"/>
-    <g fill="#0e1512"><polygon points="1050,700 1110,480 1170,700"/><polygon points="1300,700 1360,540 1420,700"/></g>
-    <g fill="#131c18" opacity="0.9"><polygon points="700,700 770,400 840,700"/><polygon points="900,700 960,460 1020,700"/></g>
+    <g fill="#0D1416"><polygon points="1050,700 1110,480 1170,700"/><polygon points="1300,700 1360,540 1420,700"/></g>
+    <g fill="#111B1E" opacity="0.9"><polygon points="700,700 770,400 840,700"/><polygon points="900,700 960,460 1020,700"/></g>
   </svg>
   <div class="mission-shade"></div>
   <div class="mission-inner">

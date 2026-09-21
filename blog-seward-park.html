@@ -8,7 +8,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--gold:#C8A24A;--champagne:#D8BF72;--charcoal:#111111;--graphite:#2D2D2D;--off-white:#F5F3EF;--silver:#BFC4C9;}
+  :root{
+    /* Sound & Patina: cool water structure on a warm linen ground */
+    --gold:#2F6D5C;          /* verdigris, accent on LIGHT grounds */
+    --champagne:#DE9C8D;     /* alpenglow, display emphasis on DARK grounds */
+    --charcoal:#1B2B31;      /* deep water */
+    --graphite:#34474C;      /* body text on light */
+    --off-white:#EEEAE3;     /* warm linen */
+    --silver:#C3C9C4;        /* muted text on dark */
+    --alpenglow:#964F40;     /* rare warm note on light grounds */
+  }
+  /* Dark containers retint the accent so it stays legible.
+     Custom properties inherit, so every descendant using var(--gold) follows. */
+  nav, .mobile-menu, .dropdown-menu-inner, footer,
+  .hero, .page-hero, .article-hero, .cta-band, .article-cta-box,
+  .contact-info, .featured-card, .flow-section, .guides-grid, .guide-card,
+  .mission-full, .partner-cards, .partner-card, .paths-grid, .path-card,
+  .services-grid, .statement, .strategy, .team-grid, .team-card,
+  .values, .value-card, .map-section, .map-wrap, .guide-gate-overlay,
+  .qr-box, .story-photo, .team-photo, .bio-photo,
+  .calc, .development{
+    --gold:#77B5A2;          /* verdigris light */
+  }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{background:var(--off-white);color:var(--charcoal);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;}
@@ -18,7 +39,7 @@
   a{color:inherit;}
   .grain{position:fixed;inset:0;z-index:200;pointer-events:none;opacity:0.035;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:26px 5vw;transition:all 0.5s cubic-bezier(.22,.61,.36,1);background:rgba(17,17,17,0.94);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(200,162,74,0.15);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:26px 5vw;transition:all 0.5s cubic-bezier(.22,.61,.36,1);background:rgba(17,17,17,0.94);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(119,181,162,0.15);}
   .logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none;}
   .logo-mark img{height:32px;width:auto;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.25));}
   .nav-links{display:flex;gap:38px;align-items:center;}
@@ -50,10 +71,10 @@
   .nav-dropdown>a{display:inline-flex;align-items:center;gap:5px;}
   .nav-dropdown .caret{font-size:8px;opacity:0.7;transform:translateY(1px);}
   .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:16px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.25s ease;}
-  .dropdown-menu-inner{background:rgba(17,17,17,0.98);border:1px solid rgba(200,162,74,0.22);min-width:170px;padding:12px 0;box-shadow:0 18px 36px rgba(0,0,0,0.35);}
+  .dropdown-menu-inner{background:rgba(17,17,17,0.98);border:1px solid rgba(119,181,162,0.22);min-width:170px;padding:12px 0;box-shadow:0 18px 36px rgba(0,0,0,0.35);}
   .dropdown-menu-inner a{display:block;padding:9px 22px;font-size:10.5px;white-space:nowrap;opacity:0.85;}
   .dropdown-menu-inner a::after{display:none;}
-  .dropdown-menu-inner a:hover{opacity:1;background:rgba(200,162,74,0.08);}
+  .dropdown-menu-inner a:hover{opacity:1;background:rgba(119,181,162,0.08);}
   .dropdown-menu-inner a.active{color:var(--gold);opacity:1;}
   .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;}
   .dropdown-menu.force-closed{opacity:0 !important;visibility:hidden !important;pointer-events:none !important;}
@@ -63,7 +84,7 @@
   @media(max-width:840px){.nav-links{display:none;}.hamburger{display:flex;}}
 
   /* ARTICLE HERO */
-  .article-hero{position:relative;min-height:66vh;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(180deg,#0b0a09 0%,#171310 45%,#1d1610 100%);}
+  .article-hero{position:relative;min-height:66vh;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(180deg,#070B0D 0%,#0E1619 45%,#10191D 100%);}
   .article-hero-art{position:absolute;inset:0;opacity:0.9;}
   .hero-vignette{position:absolute;inset:0;background:linear-gradient(0deg, rgba(10,9,8,0.65) 0%, transparent 45%);}
   .article-hero-inner{position:relative;z-index:5;width:100%;padding:170px 5vw 70px;max-width:900px;}
@@ -111,7 +132,7 @@
   .article-cta-box p{color:var(--silver);font-size:14px;margin-bottom:30px;font-weight:300;}
   .btn{font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;padding:15px 30px;text-decoration:none;transition:all 0.35s ease;display:inline-block;}
   .btn-primary{background:var(--gold);color:var(--charcoal);}
-  .btn-primary:hover{background:var(--champagne);box-shadow:0 0 26px rgba(200,162,74,0.4);}
+  .btn-primary:hover{background:var(--champagne);box-shadow:0 0 26px rgba(119,181,162,0.4);}
 
   /* RELATED */
   .related{padding:0 5vw 150px;background:var(--off-white);}
@@ -189,13 +210,13 @@
 <section class="article-hero">
   <svg class="article-hero-art" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="spHero" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2e3d34"/><stop offset="55%" stop-color="#182420"/><stop offset="100%" stop-color="#0c120f"/></linearGradient>
-      <linearGradient id="spSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D8BF72" stop-opacity="0.45"/><stop offset="100%" stop-color="#D8BF72" stop-opacity="0"/></linearGradient>
+      <linearGradient id="spHero" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#273C44"/><stop offset="55%" stop-color="#162226"/><stop offset="100%" stop-color="#0B1113"/></linearGradient>
+      <linearGradient id="spSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DE9C8D" stop-opacity="0.45"/><stop offset="100%" stop-color="#DE9C8D" stop-opacity="0"/></linearGradient>
     </defs>
     <rect width="1440" height="800" fill="url(#spHero)"/>
     <circle cx="1100" cy="220" r="200" fill="url(#spSun)"/>
-    <rect x="0" y="600" width="1440" height="200" fill="#0d2a38" opacity="0.5"/>
-    <g fill="#182420">
+    <rect x="0" y="600" width="1440" height="200" fill="#19272C" opacity="0.5"/>
+    <g fill="#162226">
       <polygon points="80,600 160,380 240,600"/>
       <polygon points="200,600 300,340 400,600"/>
       <polygon points="360,600 450,400 540,600"/>
@@ -243,17 +264,17 @@
   <div class="image-break">
     <div class="image-break-inner">
       <svg viewBox="0 0 1100 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="spBreak" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#324438"/><stop offset="100%" stop-color="#0c120f"/></linearGradient></defs>
+        <defs><linearGradient id="spBreak" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2A434C"/><stop offset="100%" stop-color="#0B1113"/></linearGradient></defs>
         <rect width="1100" height="420" fill="url(#spBreak)"/>
-        <rect x="0" y="300" width="1100" height="120" fill="#0d2a38" opacity="0.5"/>
-        <g fill="#182420">
+        <rect x="0" y="300" width="1100" height="120" fill="#19272C" opacity="0.5"/>
+        <g fill="#162226">
           <polygon points="80,300 150,150 220,300"/>
           <polygon points="180,300 260,120 340,300"/>
           <polygon points="320,300 400,160 480,300"/>
           <polygon points="460,300 540,140 620,300"/>
           <polygon points="600,300 680,180 760,300"/>
         </g>
-        <circle cx="920" cy="100" r="40" fill="#D8BF72" opacity="0.5"/>
+        <circle cx="920" cy="100" r="40" fill="#DE9C8D" opacity="0.5"/>
       </svg>
     </div>
     <div class="image-caption">Seward Park's old-growth peninsula on Lake Washington</div>
@@ -284,11 +305,11 @@
     <a href="blog-magnolia.html" class="post-card">
       <div class="post-thumb">
         <svg viewBox="0 0 500 350" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="rmag3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3a4a4a"/><stop offset="100%" stop-color="#0e1512"/></linearGradient></defs>
+          <defs><linearGradient id="rmag3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#304B54"/><stop offset="100%" stop-color="#0D1416"/></linearGradient></defs>
           <rect width="500" height="350" fill="url(#rmag3)"/>
-          <rect x="0" y="260" width="500" height="90" fill="#141d1a"/>
-          <polygon points="0,260 80,190 180,260" fill="#182420"/><polygon points="140,260 230,170 320,260" fill="#182420"/>
-          <circle cx="410" cy="100" r="34" fill="#D8BF72" opacity="0.55"/>
+          <rect x="0" y="260" width="500" height="90" fill="#121C1F"/>
+          <polygon points="0,260 80,190 180,260" fill="#162226"/><polygon points="140,260 230,170 320,260" fill="#162226"/>
+          <circle cx="410" cy="100" r="34" fill="#DE9C8D" opacity="0.55"/>
         </svg>
       </div>
       <div class="post-tag">Neighborhood Guide</div>
@@ -298,11 +319,11 @@
     <a href="blog-beacon-hill.html" class="post-card">
       <div class="post-thumb">
         <svg viewBox="0 0 500 350" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="rbh3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a2f33"/><stop offset="100%" stop-color="#0d0e0f"/></linearGradient></defs>
+          <defs><linearGradient id="rbh3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#21353C"/><stop offset="100%" stop-color="#0A1012"/></linearGradient></defs>
           <rect width="500" height="350" fill="url(#rbh3)"/>
-          <polygon points="0,350 0,220 100,150 220,220 220,350" fill="#171a1c"/>
-          <rect x="260" y="180" width="40" height="170" fill="#1c2023"/><rect x="310" y="150" width="40" height="200" fill="#202427"/>
-          <circle cx="430" cy="90" r="36" fill="#C8A24A" opacity="0.55"/>
+          <polygon points="0,350 0,220 100,150 220,220 220,350" fill="#121D21"/>
+          <rect x="260" y="180" width="40" height="170" fill="#172428"/><rect x="310" y="150" width="40" height="200" fill="#1A282D"/>
+          <circle cx="430" cy="90" r="36" fill="#DE9C8D" opacity="0.55"/>
         </svg>
       </div>
       <div class="post-tag">Neighborhood Guide</div>
@@ -312,11 +333,11 @@
     <a href="blog-mt-baker.html" class="post-card">
       <div class="post-thumb">
         <svg viewBox="0 0 500 350" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="rmb3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2d3a3a"/><stop offset="100%" stop-color="#0e1512"/></linearGradient></defs>
+          <defs><linearGradient id="rmb3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#253A42"/><stop offset="100%" stop-color="#0D1416"/></linearGradient></defs>
           <rect width="500" height="350" fill="url(#rmb3)"/>
-          <rect x="0" y="260" width="500" height="90" fill="#16201d"/>
-          <rect x="60" y="180" width="90" height="80" fill="#1a2420"/><rect x="180" y="160" width="100" height="100" fill="#1e2a26"/>
-          <circle cx="250" cy="90" r="30" fill="#D8BF72" opacity="0.5"/>
+          <rect x="0" y="260" width="500" height="90" fill="#131F23"/>
+          <rect x="60" y="180" width="90" height="80" fill="#162328"/><rect x="180" y="160" width="100" height="100" fill="#1A292E"/>
+          <circle cx="250" cy="90" r="30" fill="#DE9C8D" opacity="0.5"/>
         </svg>
       </div>
       <div class="post-tag">Neighborhood Guide</div>
