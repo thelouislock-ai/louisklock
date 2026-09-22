@@ -1,45 +1,58 @@
-# Louis Lock Real Estate: Brand & Style Reference
+# Louis Lock Real Estate: Master Brand Guide
 
 > Cool water, warm ground, one accent that earns its place.
 
-**Theme:** light-first, with deep bands. **Palette name:** Sound & Patina.
+**Palette:** Sound & Patina. **Owner:** Louis Lock, Designated Broker, eXp Realty LLC, Washington.
+**Scope:** every surface. Website, social, print, signage, email, decks, video.
 
-The system reads Seattle without saying Seattle out loud. Structure comes from deep Puget water and weathered teal; the page sits on warm linen rather than paper white; and the accent is oxidised copper, the green salt air leaves on metal. A second accent, alpenglow, is the ten minutes of warm light that hits Rainier at dusk, and it is used sparingly enough that it still means something when it appears. There is no gold, no black, and no white anywhere in the system. Darks are deep green-blue, not black. Grounds are tinted linen, not paper.
+This is the single source of truth. If something conflicts with an older file, deck or template, this wins.
 
 ---
 
-## Tokens: Colors
+## 1. The idea
 
-| Name | Value | Token | Role |
-|------|-------|-------|------|
-| Warm linen | `#EEEAE3` | `--off-white` | Page ground. Also body text on deep surfaces. |
-| Card | `#F7F4EF` |  | Raised panels sitting on the linen ground |
-| Deep water | `#1B2B31` | `--charcoal` | Dark bands, headings on light, nav and footer |
-| Teal | `#2F5559` |  | Mid structure, secondary surfaces |
-| Slate body | `#34474C` | `--graphite` | Body copy on light grounds |
-| Pewter | `#5E665F` |  | Muted and secondary text on light |
-| Line | `#DAD5CB` |  | Hairline rules, card borders, dividers |
-| Mist | `#C3C9C4` | `--silver` | Muted text on deep surfaces |
-| **Verdigris** | `#2F6D5C` | `--gold` | **The accent, on LIGHT grounds.** Links, eyebrows, active states, numerals |
-| **Verdigris light** | `#77B5A2` | `--gold` (inside dark containers) | **The accent, on DARK grounds.** Same role, legible tint |
-| Alpenglow | `#964F40` | `--alpenglow` | Rare warm note on light grounds |
-| Alpenglow light | `#DE9C8D` | `--champagne` | Display emphasis on dark: the italic word in a headline |
+The system reads Seattle without saying Seattle out loud.
+
+Structure comes from deep Puget water and weathered teal. The page sits on warm linen rather than paper white. The accent is oxidised copper, the green that salt air leaves on metal. A second accent, alpenglow, is the ten minutes of warm light that hits Rainier at dusk, held back so it still means something when it appears.
+
+**There is no gold, no black and no white anywhere in this system.** Darks are deep green-blue. Grounds are tinted linen. Those two substitutions are most of what separates this from every other brokerage brand in the market.
+
+**Positioning in one line:** a Seattle broker who reads the lot, not just the listing.
+
+---
+
+## 2. Color
+
+### Full palette
+
+| Name | HEX | RGB | CMYK | Role |
+|---|---|---|---|---|
+| Warm linen | `#EEEAE3` | 238 234 227 | 0/2/5/7 | Primary ground. Also text on deep surfaces. |
+| Card | `#F7F4EF` | 247 244 239 | 0/1/3/3 | Raised panels on the linen ground |
+| Deep water | `#1B2B31` | 27 43 49 | 45/12/0/81 | Dark bands, headings on light, nav, footer |
+| Teal | `#2F5559` | 47 85 89 | 47/4/0/65 | Mid structure, secondary surfaces |
+| Slate body | `#34474C` | 52 71 76 | 32/7/0/70 | Body copy on light grounds |
+| Pewter | `#5E665F` | 94 102 95 | 8/0/7/60 | Muted and secondary text on light |
+| Line | `#DAD5CB` | 218 213 203 | 0/2/7/15 | Hairline rules, borders, dividers |
+| Mist | `#C3C9C4` | 195 201 196 | 3/0/2/21 | Muted text on deep surfaces |
+| **Verdigris** | `#2F6D5C` | 47 109 92 | 57/0/16/57 | **Accent on LIGHT grounds** |
+| **Verdigris light** | `#77B5A2` | 119 181 162 | 34/0/10/29 | **Accent on DARK grounds** |
+| Alpenglow | `#964F40` | 150 79 64 | 0/47/57/41 | Rare warm note on light |
+| Alpenglow light | `#DE9C8D` | 222 156 141 | 0/30/36/13 | Display emphasis on dark |
+
+CMYK values are conversions, not press-matched. For anything printed in volume, ask the printer to match to the HEX and pull a proof.
 
 ### The accent split is mandatory, not stylistic
 
-One accent value cannot clear WCAG AA against both a linen ground and a near-black one. The math forbids it: to hit 4.5:1 against `#EEEAE3` the accent must be very dark, and to hit 4.5:1 against `#1B2B31` it must be light. So the accent exists as two tints of one hue.
+One accent value cannot clear WCAG AA against both a linen ground and a near-black one. The math forbids it: to hit 4.5:1 against `#EEEAE3` the accent must be dark, and to hit 4.5:1 against `#1B2B31` it must be light. So the accent exists as two tints of one hue.
 
-Implementation: define `--gold` once as the light-ground verdigris, then redefine it inside dark containers. Custom properties inherit, so every descendant follows with no per-rule edits.
+**Use verdigris `#2F6D5C` on anything light. Use verdigris light `#77B5A2` on anything dark. Never one value for both.**
 
-```css
-:root{ --gold:#2F6D5C; }
-nav, footer, .hero, .page-hero, .article-hero, .cta-band,
-.statement, .strategy, .calc, .development, /* ...all dark containers */ {
-  --gold:#77B5A2;
-}
-```
+The previous brand failed exactly this. Gold `#C8A24A` on off-white `#F5F3EF` measured **2.17:1** against a 4.5:1 requirement, used 34+ times as section labels. It was genuinely hard to read on a phone in daylight.
 
-**The previous brand failed this.** Gold `#C8A24A` on off-white `#F5F3EF` measured **2.17:1** against a 4.5:1 standard, used 34+ times as section labels. Every value in this system was measured before it was adopted.
+### Alpenglow is rationed
+
+Alpenglow appears roughly **once per page or per piece**. The italicised word in a headline. A sold badge. A testimonial attribution. That is the entire brief. The moment it shows up three times on one layout it stops reading as emphasis and starts reading as a second brand color.
 
 ### Measured contrast
 
@@ -55,50 +68,48 @@ nav, footer, .hero, .page-hero, .article-hero, .cta-band,
 | Verdigris light on deep water | 6.21:1 | PASS |
 | Alpenglow light on deep water | 6.44:1 | PASS |
 
+Every value was measured before adoption. Anything added later gets measured too.
+
 ---
 
-## Tokens: Typography
+## 3. Typography
 
 Three faces, each with one job. Do not add a fourth.
 
-### Cormorant Garamond, the display face
-- Weights 300, 400, 500. Italic used for the emphasised word only.
-- Headlines, section titles, large numerals, pull quotes, drop caps.
-- Sizes 26 to 68px. Line height 1.02 to 1.2. Letter spacing near zero; it is already narrow.
-- The italic in a headline takes the accent color: verdigris on light, alpenglow light on dark.
+**Cormorant Garamond** carries display. Weights 300 to 500. Headlines, section titles, large numerals, pull quotes, drop caps. Italic is reserved for the single emphasised word, and that word takes the accent color. Letter spacing stays near zero; the face is already narrow.
 
-### Montserrat, the label face
-- Weights 500, 600. **Always uppercase, always letterspaced 0.16em to 0.32em.**
-- Eyebrows, nav, buttons, field labels, metadata, stat captions.
-- Sizes 8.5 to 12px. Never above 14px; if it wants to be bigger it should be Cormorant.
+**Montserrat** carries labels. Weights 500 and 600, **always uppercase, always letterspaced 0.16em to 0.32em**. Eyebrows, nav, buttons, field labels, metadata, captions on stats. Never above 14px. If a label wants to be bigger than that, it wants to be Cormorant instead.
 
-### Inter, the body face
-- Weight 300 for body, 400 for emphasis.
-- Paragraphs, form inputs, captions, anything read in sentences.
-- Sizes 13 to 16.5px. Line height 1.6 to 1.9. Long-form article copy runs 16.5px at 1.9.
+**Inter** carries body. Weight 300 for running text, 400 for emphasis. Paragraphs, form fields, captions, anything read in sentences.
 
-### Scale
+### Scale (web)
 
 | Role | Face | Size | Line height |
-|------|------|------|-------------|
-| Page hero | Cormorant 500 | 38–68px | 1.06 |
-| Section head | Cormorant 500 | 32–44px | 1.12 |
-| Card head | Cormorant 500 | 22–26px | 1.15 |
+|---|---|---|---|
+| Page hero | Cormorant 500 | 38 to 68px | 1.06 |
+| Section head | Cormorant 500 | 32 to 44px | 1.12 |
+| Card head | Cormorant 500 | 22 to 26px | 1.15 |
 | Body large | Inter 300 | 16.5px | 1.9 |
-| Body | Inter 300 | 14.5–15px | 1.75 |
-| Caption | Inter 300 | 12.5–13px | 1.6 |
+| Body | Inter 300 | 14.5 to 15px | 1.75 |
+| Caption | Inter 300 | 12.5 to 13px | 1.6 |
 | Eyebrow | Montserrat 600 | 10.5px | 1.4 |
 | Micro label | Montserrat 600 | 8.5px | 1.4 |
 
+### Print and everywhere else
+
+Same three faces. All are free on Google Fonts, so a printer, a designer or a VA can install them at no cost. Ratios carry over: display is roughly 4 to 6 times body size, eyebrows sit around 60 percent of body size with heavy letterspacing.
+
+**If a tool genuinely cannot load them** (some MLS portals, some email clients), substitute in this order: Cormorant Garamond to Georgia; Montserrat to Helvetica Neue or Arial; Inter to Helvetica or Arial. Never substitute into Times New Roman or Calibri, both of which read as an unbranded default.
+
 ---
 
-## Tokens: Spacing & Shape
+## 4. Shape, space, layout
 
-**Base unit:** 4px. Section rhythm runs 74px to 150px vertical.
+**Radius: zero.** Every panel, card, button and input is square. The only curve in the system is a full circle, used solely for avatars, social icons and map pins. Rounded rectangles are not part of the vocabulary and are the fastest way to make this look like a template.
 
-**Radius: zero.** Every panel, card, button and input in this system has square corners. The one exception is a circle, used only for avatars, social pills and the map pin. Rounded rectangles are not part of the vocabulary.
+**Separation is hairlines, not shadows.** A 1px `#DAD5CB` rule, or a change of surface. Drop shadows are reserved for genuinely floating chrome such as a modal. Never on a card.
 
-**Elevation is hairlines, not shadows.** Separation comes from a 1px `#DAD5CB` rule or from a surface change. Drop shadows are reserved for genuinely floating chrome (modal overlays), never for cards.
+**Base unit 4px.** Web section rhythm runs 74 to 150px vertical. Print scales the same ratios.
 
 **Surfaces**
 
@@ -111,75 +122,97 @@ Three faces, each with one job. Do not add a fourth.
 
 ---
 
-## Components
+## 5. Components
 
-**Primary button.** Solid `#1B2B31`, linen text, square, Montserrat 600 at 10px / 0.2em uppercase, padding 13px 24px. Inverts on hover.
+**Primary button.** Solid deep water, linen text, square, Montserrat 600 at 10px / 0.2em uppercase, padding 13px 24px. Inverts on hover.
 
-**Accent button.** Solid verdigris, card-colored text. One per view at most. On dark grounds the fill becomes verdigris light and the text becomes deep water.
+**Accent button.** Solid verdigris, card-colored text. At most one per view. On dark grounds the fill becomes verdigris light and the text becomes deep water.
 
-**Outline button.** Transparent, 1px `#DAD5CB` border, deep water text. Border goes verdigris on hover. This is the default for paired actions (Guide + Roadmap).
+**Outline button.** Transparent, 1px line border, deep water text, border goes verdigris on hover. The default for paired actions such as Guide plus Roadmap.
 
-**Eyebrow.** Montserrat 600, 10.5px, 0.32em, uppercase, accent colored, often preceded by a 30px hairline rule in the same color.
+**Eyebrow.** Montserrat 600, 10.5px, 0.32em, uppercase, accent colored, usually preceded by a 30px hairline rule in the same color.
 
-**Card.** `#F7F4EF` on a 1px `#DAD5CB` border, square, 24 to 48px padding. Border goes verdigris on hover. No shadow.
+**Card.** Card fill on a 1px line border, square, 24 to 48px padding. Border goes verdigris on hover. No shadow.
 
-**Input.** Transparent fill, 1px bottom border only on light forms; full 1px border on dark. Border brightens to the accent on focus. Never a rounded pill.
+**Input.** Transparent fill. Bottom border only on light forms, full border on dark. Border brightens to the accent on focus. Never a rounded pill.
 
-**Focus state.** `outline: 2px solid var(--gold); outline-offset: 3px;` defined once, globally. The previous site had **no visible focus indicator anywhere**; that is a WCAG 2.4.7 failure and must not recur.
+**Focus state.** `outline: 2px solid var(--gold); outline-offset: 3px;` defined once, globally. The previous site had no visible focus indicator anywhere, a WCAG 2.4.7 failure. Must not recur.
 
 ---
 
-## Imagery
+## 6. Photography
 
-**This is the rule that matters most.**
+**This is the rule that matters most, and no amount of color or type substitutes for it.**
 
-Real estate is a photography business. Photographs carry every page; type and color are the frame around them.
+Real estate is a photography business. Photographs carry every surface; type and color are the frame around them.
 
-**Do not use vector illustration as a substitute for photography.** The previous site ran 40+ hand-drawn SVG shapes per page (cartoon skylines, geometric house outlines) against 4 real photographs sitewide. That single fact is what made it read as generated, ahead of any type or color choice. No palette fixes it.
+**Never use vector illustration in place of photography.** The previous site ran 40+ hand-drawn SVG shapes per page (cartoon skylines, geometric house outlines) against 4 real photographs sitewide. That single fact is the main reason it read as machine-generated, ahead of any type or color choice.
 
-What to shoot:
+**What to shoot**
+
 - **Neighborhoods.** Establishing frames that say a specific place: the Magnolia bluff, the Beacon Hill ridge, Seward Park's water edge. Ownable, never expires, and backs the born-and-raised claim.
-- **Architecture and streetscape.** Craftsman detail, a DADU, a corner lot with visible potential. These carry the lot-reading angle.
-- **Wide water and skyline.** Shot with empty sky or water in the middle third so text can sit on top.
-- **One professional portrait.** Hire this out. It is the face of the site and cheap portraits read instantly.
+- **Architecture and streetscape.** Craftsman detail, a DADU, a corner lot with visible potential. These carry the lot-reading angle that no competitor is selling.
+- **Wide water and skyline.** Framed with empty sky or water through the middle third so text can sit on top.
+- **One professional portrait.** Hire this out. It is the face of everything and cheap portraits read instantly.
 
-Shoot on overcast Seattle mornings. The flat light is genuinely flattering and it is free. Minimum 2400px on the long edge. Strip EXIF before publishing; phone photos carry GPS.
+**How to shoot.** Overcast Seattle mornings. The flat light is genuinely flattering and it is free. Minimum 2400px on the long edge. Strip EXIF before publishing; phone photos carry GPS coordinates.
 
-**Never** use stock luxury interiors. They are a recognisable tell and they undo the point.
-
----
-
-## Writing
-
-Applies to anything client-facing. The goal is copy that reads like Louis wrote it.
-
-- **No em-dashes.** This has recurred repeatedly. Use commas, colons, or split the sentence. Grep for it before shipping.
-- **Vary the rhythm.** The previous site ran the identical beat in every section: eyebrow, then a serif headline with exactly one italic word, then a short paragraph, then a three-column grid. That metronome is as much a tell as any phrase. Break it deliberately.
-- **Lead with the client's situation,** not credentials. The throughline is a tailored roadmap for them.
-- Cut the standard tells: "in today's fast-paced market", "whether you're a first-time buyer or a seasoned investor", "unlock your dream home", stacked "moreover/furthermore".
-- Prefer a concrete detail (a neighborhood quirk, a real number, an actual anecdote) over generic real-estate language.
+**Never** use stock luxury interiors. They are a recognisable tell and they undo the entire point.
 
 ---
 
-## What must never be claimed
+## 7. Voice
 
-Louis holds a Washington broker license. Site copy is regulated advertising.
+The goal is copy that reads like Louis wrote it, because he did.
 
-- **No sales statistics that are not real.** No invented closed-sale counts, volume figures, or average prices.
-- **No press or award logos** without an actual placement.
-- **No MLS listing data** without a licensed NWMLS IDX feed, and if one is added, the NWMLS disclaimer and a DMCA notice become mandatory in the footer.
-- **No testimonial that is not a real client's words,** with their consent, attributed first name and last initial only.
-- Placeholder copy ("quote coming soon", "bio coming soon") must never be live. Ship fewer real items instead.
-
-The brokerage disclosure "Licensed Real Estate Broker, eXp Realty, LLC, Washington State" stays in the footer of every page.
+- **No em-dashes.** This has recurred repeatedly across the site. Use a comma, a colon, or split the sentence. Grep before shipping anything.
+- **Vary the rhythm.** The old site ran the identical beat in every section: eyebrow, serif headline with exactly one italic word, short paragraph, three-column grid. That metronome is as much of a tell as any single phrase. Break it on purpose.
+- **Lead with the client's situation,** never with credentials. The throughline is a roadmap built for them.
+- **Cut the standard tells:** "in today's fast-paced market", "whether you're a first-time buyer or a seasoned investor", "unlock your dream home", stacked "moreover" and "furthermore".
+- **Prefer one concrete detail** over three generic ones. A neighborhood quirk, an actual number, a real anecdote.
+- Slang is fine in a DM or a story caption. Dial it all the way down on listings, contracts, guides and client email.
 
 ---
 
-## Quick start
+## 8. By surface
+
+**Website.** Linen ground, deep water bands roughly every third section, verdigris accents, alpenglow once. Photography full-bleed.
+
+**Instagram feed.** Alternate linen-ground and deep-water posts so the grid reads as a checkerboard rather than a wall. Type: Montserrat uppercase eyebrow, Cormorant headline, one alpenglow word. Leave generous margin; the crowded edge-to-edge look is what template accounts do.
+
+**Instagram stories.** Deep water ground, linen text, verdigris light accent. Keep the safe zone clear top and bottom.
+
+**Email signature.** Name in Cormorant, role and contact in Montserrat uppercase small, a single verdigris hairline rule above the brokerage disclosure. No logo soup, no social icon row wider than the text block.
+
+**Business card.** Deep water on the reverse, linen on the face. Name in Cormorant 500, everything else Montserrat uppercase. Square corners, no rounded stock, no spot gloss. Uncoated stock suits the palette far better than gloss.
+
+**Yard sign and rider.** Deep water field, linen type, verdigris light rule. Phone number in Montserrat at the largest size the sign allows; legibility at 40mph beats elegance. eXp Realty lockup and license line as required.
+
+**Listing flyer.** Photography occupies the top 60 percent minimum. Linen panel beneath for specs. Price in Cormorant, specs in Montserrat uppercase, description in Inter.
+
+**Presentation decks.** Deep water title slides, linen content slides. One idea per slide. Cormorant for the statement, Inter for the support.
+
+---
+
+## 9. What must never be claimed
+
+Louis holds a Washington real estate broker license. Everything public is regulated advertising and his license is attached to it.
+
+- **No sales statistics that are not real.** No invented closed-sale counts, volume figures or average prices. This is not a design decision.
+- **No press, award or ranking logos** without an actual placement.
+- **No MLS listing data** without a licensed NWMLS IDX feed. If one is added, the NWMLS disclaimer and a DMCA notice become mandatory in the footer.
+- **No testimonial** that is not a real client's words, with consent, attributed first name and last initial only.
+- **No placeholder copy live, ever.** "Quote coming soon" and "Bio coming soon" ran on the live site for months. Ship fewer real items instead.
+- **No lead capture for something that does not exist.** Three guide cards took a phone number and delivered nothing. Removed.
+
+The disclosure "Licensed Real Estate Broker, eXp Realty, LLC, Washington State" appears in the footer of every page and on every print piece.
+
+---
+
+## 10. Quick start (web)
 
 ```css
 :root{
-  /* Sound & Patina */
   --off-white:#EEEAE3;   /* warm linen ground */
   --card:#F7F4EF;
   --charcoal:#1B2B31;    /* deep water */
@@ -197,7 +230,7 @@ The brokerage disclosure "Licensed Real Estate Broker, eXp Realty, LLC, Washingt
   --f-body:'Inter',ui-sans-serif,system-ui,sans-serif;
 }
 
-/* the accent split: mandatory */
+/* the accent split: mandatory, not optional */
 nav, footer, .hero, .page-hero, .article-hero, .cta-band, .article-cta-box,
 .mobile-menu, .dropdown-menu-inner, .contact-info, .featured-card,
 .flow-section, .guides-grid, .guide-card, .mission-full, .partner-cards,
@@ -214,8 +247,20 @@ nav, footer, .hero, .page-hero, .article-hero, .cta-band, .article-cta-box,
 
 ---
 
-## Using this as a prompt
+## 11. The prompt
 
-Paste the whole file. The short version, if you need one:
+Paste this into any AI tool, designer brief, or freelancer scope.
 
-> Design for a Seattle real estate broker. Palette "Sound & Patina": warm linen ground `#EEEAE3`, deep water `#1B2B31`, teal `#2F5559`, body `#34474C`, hairlines `#DAD5CB`. Accent is verdigris, `#2F6D5C` on light grounds and `#77B5A2` on dark, never one value for both. A rare warm note, alpenglow `#964F40` on light and `#DE9C8D` on dark, used only for the italic word in a headline. No gold, no black, no white. Cormorant Garamond for display, Montserrat uppercase letterspaced for labels, Inter light for body. Square corners everywhere except circles for avatars. Hairline rules instead of shadows. Photography carries every page; never vector illustration in place of photos. No em-dashes in any copy.
+> Design for Louis Lock, a Seattle real estate broker. Palette is "Sound & Patina": warm linen ground `#EEEAE3`, cards `#F7F4EF`, deep water `#1B2B31`, teal `#2F5559`, body text `#34474C`, muted `#5E665F`, hairlines `#DAD5CB`.
+>
+> The accent is verdigris and exists as two values: `#2F6D5C` on light grounds, `#77B5A2` on dark. Never use one value for both, it fails contrast. A second accent, alpenglow, is rationed to roughly once per piece: `#964F40` on light, `#DE9C8D` on dark, used for the single italicised word in a headline.
+>
+> No gold, no black, no white anywhere. Darks are deep green-blue, grounds are tinted linen.
+>
+> Type: Cormorant Garamond for display (italic only on the emphasised word, which takes the accent color), Montserrat uppercase and letterspaced 0.16 to 0.32em for all labels and buttons, Inter light for body.
+>
+> Square corners on everything except circular avatars. Separation comes from 1px hairlines, never drop shadows. Generous whitespace.
+>
+> Photography carries every layout; never use vector illustration in place of photos, and never stock luxury interiors. Real Seattle neighborhoods, architecture and water, shot in overcast light.
+>
+> Copy: no em-dashes. Vary sentence rhythm. Lead with the client's situation, not credentials. One concrete detail beats three generic ones. Never claim sales statistics, press placements or awards.
