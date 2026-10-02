@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Commercial | Louis Lock Real Estate</title>
+<title>What Is Your Home Worth | Louis Lock Real Estate</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -88,9 +88,9 @@
   @media(max-width:840px){.nav-links{display:none;}.hamburger{display:flex;}}
 
   /* PAGE HERO */
-  .page-hero{position:relative;min-height:64vh;display:flex;align-items:flex-end;overflow:hidden;
-    background:radial-gradient(ellipse 1100px 600px at 50% 108%, rgba(119,181,162,0.22), transparent 65%), linear-gradient(180deg,#080D0F 0%,#121C1F 45%,#162227 100%);}
-  .page-hero-art{position:absolute;inset:0;opacity:0.9;}
+  .page-hero{position:relative;min-height:52vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:radial-gradient(ellipse 1100px 600px at 50% 108%, rgba(119,181,162,0.28), transparent 65%), linear-gradient(180deg,#070B0D 0%,#0E1619 45%,#10191D 100%);}
+  .page-hero-art{position:absolute;inset:0;opacity:0.75;}
   .hero-vignette{position:absolute;inset:0;background:linear-gradient(0deg, rgba(10,9,8,0.6) 0%, transparent 40%);}
   .page-hero-inner{position:relative;z-index:5;width:100%;padding:170px 5vw 80px;}
   .hero-eyebrow{font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;font-size:10.5px;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:14px;}
@@ -103,65 +103,76 @@
   .reveal.in{opacity:1;transform:translateY(0);}
   .section-eyebrow{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
 
-  /* THREE SERVICE PATHS */
-  .paths{padding:0 5vw 150px;background:var(--off-white);margin-top:-1px;}
-  .paths-head{max-width:680px;padding:130px 0 70px;}
-  .paths-head h2{font-size:clamp(32px,4vw,50px);line-height:1.18;}
-  .paths-head h2 em{font-style:italic;color:var(--gold);}
-  .paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--charcoal);}
-  @media(max-width:860px){.paths-grid{grid-template-columns:1fr;}}
-  .path-card{position:relative;min-height:460px;display:flex;flex-direction:column;justify-content:flex-end;padding:44px;overflow:hidden;background:var(--charcoal);}
-  .path-art{position:absolute;inset:0;opacity:0.75;transition:transform 0.8s ease, opacity 0.5s ease;}
-  .path-card:hover .path-art{transform:scale(1.06);opacity:0.9;}
-  .path-shade{position:absolute;inset:0;background:linear-gradient(180deg, transparent 25%, rgba(10,9,8,0.88) 100%);}
-  .path-content{position:relative;z-index:2;color:var(--off-white);}
-  .path-num{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--gold);margin-bottom:12px;}
-  .path-content h3{font-size:clamp(22px,2.4vw,28px);margin-bottom:12px;}
-  .path-content p{font-size:13.5px;line-height:1.7;color:var(--silver);font-weight:300;}
+  /* CONTACT MAIN: form + info split */
+  .contact-main{display:grid;grid-template-columns:1fr 0.85fr;background:var(--off-white);}
+  @media(max-width:960px){.contact-main{grid-template-columns:1fr;}}
 
-  /* MARKET STATEMENT */
-  .strategy{position:relative;min-height:60vh;display:flex;align-items:center;background:linear-gradient(160deg,#162227 0%,#1E2F35 55%,#283F48 100%);overflow:hidden;}
-  .strategy-art{position:absolute;inset:0;opacity:0.85;}
-  .strategy-shade{position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,10,11,0.75) 0%, rgba(10,10,11,0.15) 60%, transparent 100%);}
-  .strategy-inner{position:relative;z-index:3;padding:100px 5vw;max-width:680px;}
-  .strategy p{font-family:'Cormorant Garamond',serif;color:var(--off-white);font-size:clamp(24px,3vw,36px);line-height:1.45;font-weight:400;}
-  .strategy .accent{color:var(--gold);font-style:italic;}
+  .contact-form-wrap{padding:130px 6vw;}
+  .contact-form-wrap h2{font-size:clamp(28px,3.2vw,42px);margin-bottom:14px;line-height:1.2;}
+  .contact-form-wrap h2 em{color:var(--gold);font-style:italic;}
+  .contact-form-wrap > p{color:var(--graphite);font-size:14.5px;margin-bottom:50px;max-width:440px;line-height:1.7;font-weight:300;}
 
-  /* ADVISORY / INVESTMENT / MARKET ANALYSIS */
-  .advisory{padding:150px 5vw;background:var(--off-white);}
-  .advisory-head{max-width:640px;margin-bottom:80px;}
-  .advisory-head h2{font-size:clamp(32px,3.8vw,50px);line-height:1.16;}
-  .advisory-head h2 em{font-style:italic;color:var(--gold);}
-  .advisory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;}
-  @media(max-width:860px){.advisory-grid{grid-template-columns:1fr;}}
-  .advisory-card{padding-top:26px;border-top:1px solid rgba(17,17,17,0.14);}
-  .advisory-card .a-num{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold);margin-bottom:16px;}
-  .advisory-card h3{font-size:22px;font-weight:500;margin-bottom:14px;}
-  .advisory-card p{font-size:14px;color:var(--graphite);line-height:1.75;font-weight:300;opacity:0.85;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px 28px;max-width:560px;}
+  @media(max-width:600px){.form-grid{grid-template-columns:1fr;}}
+  .field{display:flex;flex-direction:column;gap:10px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);opacity:0.7;}
+  .field input, .field textarea, .field select{
+    background:none;border:none;border-bottom:1px solid rgba(17,17,17,0.25);
+    padding:8px 2px 12px;font-family:'Inter',sans-serif;font-size:15px;color:var(--charcoal);
+    outline:none;transition:border-color 0.3s;font-weight:300;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{border-color:var(--gold);}
+  .field textarea{resize:vertical;min-height:90px;font-family:'Inter',sans-serif;}
+  .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232F6D5C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center;}
 
-  /* DEVELOPMENT FEATURE */
-  .development{display:grid;grid-template-columns:1fr 1fr;background:var(--graphite);color:var(--off-white);}
-  @media(max-width:860px){.development{grid-template-columns:1fr;}}
-  .development-art{position:relative;min-height:480px;overflow:hidden;}
-  .development-text{padding:110px 6vw;display:flex;flex-direction:column;justify-content:center;}
-  .development-text h2{font-size:clamp(30px,3.4vw,44px);margin-bottom:26px;line-height:1.2;}
-  .development-text h2 em{color:var(--champagne);font-style:italic;}
-  .development-text p{font-size:15px;line-height:1.85;color:var(--silver);max-width:480px;margin-bottom:32px;font-weight:300;}
+  .radio-row{display:flex;gap:26px;flex-wrap:wrap;}
+  .radio-opt{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--graphite);}
+  .radio-opt input{accent-color:var(--gold);}
 
-  .text-link{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:12px;border-bottom:1px solid currentColor;padding-bottom:6px;width:fit-content;}
-  .text-link .arrow{color:var(--gold);transition:transform 0.3s;}
-  .text-link:hover .arrow{transform:translateX(6px);}
+  .submit-btn{
+    margin-top:16px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;
+    letter-spacing:0.16em;text-transform:uppercase;background:var(--charcoal);color:var(--off-white);
+    border:none;padding:17px 38px;cursor:pointer;transition:all 0.35s ease;width:fit-content;
+  }
+  .submit-btn:hover{background:var(--gold);color:var(--charcoal);}
 
-  /* CTA */
-  .cta-band{position:relative;padding:170px 5vw;text-align:center;color:var(--off-white);overflow:hidden;background:linear-gradient(160deg,#121C1F 0%,#0C1316 60%);}
-  .cta-band::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%, rgba(119,181,162,0.18), transparent 60%);}
-  .cta-band-inner{position:relative;z-index:2;}
-  .cta-band h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:28px;font-weight:400;}
-  .cta-band h2 em{font-style:italic;color:var(--champagne);}
-  .cta-band p{color:var(--silver);max-width:520px;margin:0 auto 44px;font-size:15px;font-weight:300;}
-  .btn{font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;padding:15px 30px;text-decoration:none;transition:all 0.35s ease;display:inline-block;}
-  .btn-primary{background:var(--gold);color:var(--charcoal);}
-  .btn-primary:hover{background:var(--champagne);box-shadow:0 0 26px rgba(119,181,162,0.4);}
+  /* CONTACT INFO PANEL */
+  .contact-info{background:var(--charcoal);color:var(--off-white);padding:130px 6vw;display:flex;flex-direction:column;justify-content:center;gap:44px;}
+  .info-block .section-eyebrow{margin-bottom:16px;}
+  .info-block h3{font-size:22px;font-weight:500;margin-bottom:6px;}
+  .info-block a, .info-block p{font-size:14.5px;color:var(--silver);text-decoration:none;line-height:1.7;font-weight:300;}
+  .info-block a:hover{color:var(--champagne);}
+  .social-row{display:flex;gap:18px;margin-top:10px;}
+  .social-pill{
+    width:42px;height:42px;border:1px solid rgba(245,243,239,0.25);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--off-white);
+    font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.02em;transition:all 0.3s;
+  }
+  .social-pill:hover{border-color:var(--gold);color:var(--gold);}
+  .info-divider{height:1px;background:rgba(245,243,239,0.12);}
+
+  /* MAP */
+  .map-section{position:relative;background:var(--graphite);}
+  .map-wrap{position:relative;height:460px;overflow:hidden;}
+  .map-art{position:absolute;inset:0;}
+  .map-pin{position:absolute;top:48%;left:50%;transform:translate(-50%,-100%);text-align:center;}
+  .map-pin-dot{width:16px;height:16px;border-radius:50% 50% 50% 0;background:var(--gold);transform:rotate(-45deg);margin:0 auto;box-shadow:0 0 0 6px rgba(119,181,162,0.25);}
+  .map-pin-label{margin-top:10px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--off-white);background:rgba(17,17,17,0.75);padding:6px 12px;display:inline-block;}
+  .map-note{position:absolute;bottom:24px;left:5vw;color:var(--silver);font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;opacity:0.6;}
+
+  /* QR / OFFICE HOURS STRIP */
+  .strip{padding:110px 5vw;background:var(--off-white);display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  @media(max-width:860px){.strip{grid-template-columns:1fr;}}
+  .qr-block{display:flex;gap:34px;align-items:center;}
+  .qr-box{display:block;width:150px;height:150px;background:var(--charcoal);padding:14px;flex-shrink:0;box-sizing:border-box;}
+  .qr-box:hover{opacity:0.85;}
+  .qr-text h3{font-size:22px;margin-bottom:10px;}
+  .qr-text p{font-size:13.5px;color:var(--graphite);line-height:1.7;font-weight:300;max-width:280px;}
+
+  .hours-block h3{font-size:22px;margin-bottom:24px;}
+  .hours-row{display:flex;justify-content:space-between;max-width:360px;padding:14px 0;border-bottom:1px solid rgba(17,17,17,0.1);font-size:13.5px;color:var(--graphite);font-weight:300;}
+  .hours-row span:last-child{color:var(--charcoal);font-weight:400;}
 
   /* FOOTER */
   footer{background:var(--charcoal);color:var(--silver);padding:90px 5vw 34px;}
@@ -192,7 +203,7 @@
   </a>
   <div class="nav-links nav-font">
     <a href="residential.html">Residential</a>
-    <a href="commercial.html" class="active">Commercial</a>
+    <a href="commercial.html">Commercial</a>
     <a href="https://calendly.com/louisklock" target="_blank" rel="noopener">Schedule a Meet</a>
     <div class="nav-dropdown">
       <a href="resources.html">Resources<span class="caret">&#9662;</span></a>
@@ -201,8 +212,9 @@
           <button class="dropdown-close" aria-label="Close menu" type="button">&times;</button>
           <a href="about.html">About</a>
           <a href="blog.html">Journal</a>
+          <a href="team.html">Meet the Team</a>
           <a href="partners.html">Partners</a>
-          <a href="home-value.html">Home Value</a>
+          <a href="home-value.html" class="active">Home Value</a>
         </div>
       </div>
     </div>
@@ -214,152 +226,111 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="residential.html">Residential</a>
-  <a href="commercial.html" class="gold">Commercial</a>
+  <a href="commercial.html">Commercial</a>
   <a href="https://calendly.com/louisklock" target="_blank" rel="noopener">Schedule a Meet</a>
   <a href="about.html">About</a>
   <a href="resources.html">Resources</a>
   <a href="blog.html">Journal</a>
+  <a href="team.html">Meet the Team</a>
   <a href="partners.html">Partners</a>
-  <a href="home-value.html">Home Value</a>
+  <a href="home-value.html" class="gold">Home Value</a>
   <a href="contact.html">Contact</a>
 </div>
 
 <section class="page-hero">
-  <svg class="page-hero-art" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="ch" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1D2E34"/><stop offset="100%" stop-color="#0A1012"/></linearGradient></defs>
-    <rect width="1440" height="700" fill="url(#ch)"/>
-    <rect x="480" y="140" width="150" height="520" fill="#152024"/>
-    <rect x="650" y="220" width="150" height="440" fill="#19282D"/>
-    <rect x="820" y="80" width="150" height="580" fill="#152024"/>
-    <g fill="#DE9C8D" opacity="0.3">
-      <rect x="505" y="180" width="26" height="32"/><rect x="555" y="180" width="26" height="32"/>
-      <rect x="505" y="240" width="26" height="32"/><rect x="555" y="240" width="26" height="32"/>
-      <rect x="675" y="260" width="26" height="32"/><rect x="725" y="260" width="26" height="32"/>
-      <rect x="845" y="120" width="26" height="32"/><rect x="895" y="120" width="26" height="32"/>
-      <rect x="845" y="180" width="26" height="32"/><rect x="895" y="180" width="26" height="32"/>
+  <svg class="page-hero-art" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="hvh" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2D4852"/><stop offset="100%" stop-color="#0D1416"/></linearGradient></defs>
+    <rect width="1440" height="500" fill="url(#hvh)"/>
+    <path d="M0 330 Q360 292 720 330 T1440 326 L1440 500 L0 500 Z" fill="#0D1416" opacity="0.45"/>
+    <g fill="#0D1416" opacity="0.55">
+      <rect x="150" y="268" width="104" height="62"/><rect x="300" y="286" width="82" height="44"/>
+      <rect x="1060" y="276" width="96" height="54"/><rect x="1210" y="292" width="74" height="38"/>
     </g>
-    <g fill="#060A0C" opacity="0.5"><polygon points="60,700 130,500 200,700"/><polygon points="1240,700 1310,480 1380,700"/></g>
+    <g fill="#DE9C8D" opacity="0.4">
+      <rect x="182" y="292" width="7" height="11"/><rect x="204" y="292" width="7" height="11"/>
+      <rect x="1092" y="298" width="7" height="11"/>
+    </g>
   </svg>
   <div class="hero-vignette"></div>
   <div class="page-hero-inner">
-    <div class="hero-eyebrow"><span class="line"></span>Commercial Real Estate</div>
-    <h1>Advisory-grade strategy<br>for every <em>square foot</em>.</h1>
-    <p>From acquisition to development, Louis Lock pairs deep market analysis with hands-on execution for commercial clients across Seattle.</p>
-    <div style="margin-top:32px;">
-      <a href="https://louisklock.expportal.com" target="_blank" rel="noopener" class="btn btn-primary">Search for Properties Here</a>
+    <div class="hero-eyebrow"><span class="line"></span>Home Value</div>
+    <h1>A Zestimate doesn't<br>know your <em>lot</em>.</h1>
+    <p>It knows square footage and recent sales. It does not know your zoning, your alley access, or that the parcel behind you traded last spring for more than anyone expected. I do.</p>
+  </div>
+</section>
+
+<section class="contact-main reveal">
+  <div class="contact-form-wrap">
+    <div class="section-eyebrow">Request a Valuation</div>
+    <h2>What is your home<br>actually <em>worth</em>?</h2>
+    <p>Tell me about the property and I will put together a comparative market analysis by hand. Free, no obligation, and yours to keep whether or not you ever list with me.</p>
+    <form class="form-grid" id="valuationForm">
+      <div class="field full"><label>Property Address</label><input type="text" name="property_address" placeholder="3418 S Bennett St" required></div>
+      <div class="field"><label>City</label><input type="text" name="city" placeholder="Seattle" required></div>
+      <div class="field"><label>Zip</label><input type="text" name="zip" placeholder="98118" inputmode="numeric"></div>
+      <div class="field"><label>Bedrooms</label><input type="text" name="beds" placeholder="3" inputmode="numeric"></div>
+      <div class="field"><label>Bathrooms</label><input type="text" name="baths" placeholder="2.5" inputmode="decimal"></div>
+      <div class="field"><label>Approximate Square Feet</label><input type="text" name="sqft" placeholder="1,940" inputmode="numeric"></div>
+      <div class="field">
+        <label>Your Timeline</label>
+        <select name="timeline">
+          <option>Ready to sell now</option>
+          <option>Next 3 to 6 months</option>
+          <option>6 to 12 months</option>
+          <option>Just curious what it is worth</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label>Anything I should know about the property?</label>
+        <textarea name="notes" placeholder="Recent work, a finished basement, an unusual lot, anything a public record would miss."></textarea>
+      </div>
+      <div class="field full">
+        <label class="radio-opt" style="align-items:flex-start;gap:10px;line-height:1.6;">
+          <input type="checkbox" name="lot_potential" value="Yes" style="margin-top:4px;flex-shrink:0;">
+          <span style="font-family:'Inter',sans-serif;font-weight:300;font-size:13.5px;letter-spacing:0;text-transform:none;color:var(--graphite);opacity:1;">Also tell me what the lot could support. Zoning, DADU potential, and whether building is worth more than selling.</span>
+        </label>
+      </div>
+      <div class="field"><label>First Name</label><input type="text" name="first_name" placeholder="Jane" required></div>
+      <div class="field"><label>Last Name</label><input type="text" name="last_name" placeholder="Doe" required></div>
+      <div class="field"><label>Email</label><input type="email" name="email" placeholder="jane@email.com" required></div>
+      <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="(206) 555-0100" required></div>
+      <input type="hidden" name="_subject" value="Home Valuation Request: Louis Lock">
+      <input type="hidden" name="form_type" value="home_valuation">
+      <div class="field full">
+        <button type="submit" class="submit-btn" id="valuationSubmitBtn">Request My Valuation</button>
+        <div class="form-status" id="valuationFormStatus" style="margin-top:16px;font-size:13px;font-family:'Inter',sans-serif;display:none;"></div>
+      </div>
+    </form>
+  </div>
+  <div class="contact-info">
+    <div class="info-block">
+      <div class="section-eyebrow">What You Get</div>
+      <p>A written comparative market analysis: recent comparable sales, what is active and pending near you, how your property sits against them, and a realistic price range with the reasoning behind it.</p>
+    </div>
+    <div class="info-divider"></div>
+    <div class="info-block">
+      <div class="section-eyebrow">What Happens Next</div>
+      <p><strong style="color:var(--off-white);font-weight:400;">1.</strong> I read it myself, not a queue.<br>
+         <strong style="color:var(--off-white);font-weight:400;">2.</strong> I may call with a question or two, since the details public records miss are usually what move the number.<br>
+         <strong style="color:var(--off-white);font-weight:400;">3.</strong> You get the analysis within two business days.</p>
+    </div>
+    <div class="info-divider"></div>
+    <div class="info-block">
+      <div class="section-eyebrow">Prefer to Talk First</div>
+      <a href="tel:+12066186409">(206) 618-6409</a>
+      <p style="margin-top:8px;"><a href="mailto:inquiry@louisklock.com">inquiry@louisklock.com</a></p>
     </div>
   </div>
 </section>
 
-<section class="paths reveal">
-  <div class="paths-head">
-    <div class="section-eyebrow">What We Do</div>
-    <h2>Buy &amp; Invest. Sell &amp; <em>Lease.</em> Develop.</h2>
-  </div>
-  <div class="paths-grid">
-    <div class="path-card">
-      <svg class="path-art" viewBox="0 0 500 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#20333A"/><stop offset="100%" stop-color="#0C1316"/></linearGradient></defs>
-        <rect width="500" height="600" fill="url(#cg1)"/>
-        <rect x="90" y="200" width="140" height="380" fill="#142024"/>
-        <rect x="260" y="140" width="140" height="440" fill="#162226"/>
-        <g fill="#DE9C8D" opacity="0.3"><rect x="110" y="230" width="20" height="26"/><rect x="150" y="230" width="20" height="26"/><rect x="280" y="180" width="20" height="26"/><rect x="320" y="180" width="20" height="26"/></g>
-      </svg>
-      <div class="path-shade"></div>
-      <div class="path-content"><div class="path-num">01</div><h3>Buy &amp; Invest</h3><p>Acquire commercial assets backed by rigorous underwriting and market data.</p></div>
-    </div>
-    <div class="path-card">
-      <svg class="path-art" viewBox="0 0 500 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#23363D"/><stop offset="100%" stop-color="#0E1619"/></linearGradient></defs>
-        <rect width="500" height="600" fill="url(#cg2)"/>
-        <rect x="100" y="260" width="300" height="220" fill="#131F23"/>
-        <rect x="140" y="180" width="120" height="80" fill="#131F23"/>
-        <rect x="150" y="310" width="60" height="80" fill="#DE9C8D" opacity="0.35"/>
-        <rect x="290" y="310" width="60" height="80" fill="#DE9C8D" opacity="0.3"/>
-      </svg>
-      <div class="path-shade"></div>
-      <div class="path-content"><div class="path-num">02</div><h3>Sell &amp; Lease</h3><p>Maximize asset value through strategic positioning and tenant placement.</p></div>
-    </div>
-    <div class="path-card">
-      <svg class="path-art" viewBox="0 0 500 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="cg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1D2E34"/><stop offset="100%" stop-color="#0C1316"/></linearGradient></defs>
-        <rect width="500" height="600" fill="url(#cg3)"/>
-        <rect x="120" y="340" width="260" height="140" fill="#142024"/>
-        <polygon points="120,340 250,220 380,340" fill="#162226"/>
-        <rect x="230" y="150" width="14" height="70" fill="#DE9C8D" opacity="0.5"/>
-        <rect x="150" y="380" width="40" height="50" fill="#DE9C8D" opacity="0.25"/>
-        <rect x="310" y="380" width="40" height="50" fill="#DE9C8D" opacity="0.25"/>
-      </svg>
-      <div class="path-shade"></div>
-      <div class="path-content"><div class="path-num">03</div><h3>Development</h3><p>Ground-up development strategy, from entitlement through delivery.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="strategy reveal">
-  <svg class="strategy-art" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#162227"/><stop offset="100%" stop-color="#0A1012"/></linearGradient>
-    <linearGradient id="sun3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DE9C8D" stop-opacity="0.4"/><stop offset="100%" stop-color="#DE9C8D" stop-opacity="0"/></linearGradient></defs>
-    <rect width="1440" height="700" fill="url(#sg2)"/>
-    <circle cx="1150" cy="220" r="220" fill="url(#sun3)"/>
-    <rect x="950" y="260" width="120" height="440" fill="#111B1F"/>
-    <rect x="1090" y="180" width="120" height="520" fill="#172428"/>
-    <rect x="1230" y="320" width="120" height="380" fill="#111B1F"/>
-  </svg>
-  <div class="strategy-shade"></div>
-  <div class="strategy-inner">
-    <p>Commercial decisions carry weight. Every recommendation is grounded in <span class="accent">real market analysis</span>, not speculation.</p>
-  </div>
-</section>
-
-<section class="advisory reveal">
-  <div class="advisory-head">
-    <div class="section-eyebrow">Advisory Services</div>
-    <h2>Strategy built on <em>evidence</em>,<br>not intuition.</h2>
-  </div>
-  <div class="advisory-grid">
-    <div class="advisory-card">
-      <div class="a-num">01</div>
-      <h3>Investment Strategy</h3>
-      <p>Portfolio planning aligned to your risk tolerance, timeline, and growth goals across asset classes.</p>
-    </div>
-    <div class="advisory-card">
-      <div class="a-num">02</div>
-      <h3>Market Analysis</h3>
-      <p>Deep local data on absorption, rent trends, and comparable sales to inform every decision.</p>
-    </div>
-    <div class="advisory-card">
-      <div class="a-num">03</div>
-      <h3>Deal Structuring</h3>
-      <p>Financing, entity structure, and negotiation support tailored to complex commercial transactions.</p>
-    </div>
-  </div>
-</section>
-
-<section class="development reveal">
-  <div class="development-art">
-    <svg viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <defs><linearGradient id="dg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#23363D"/><stop offset="100%" stop-color="#0C1316"/></linearGradient></defs>
-      <rect width="700" height="700" fill="url(#dg)"/>
-      <rect x="150" y="300" width="180" height="400" fill="#162226" opacity="0.7"/>
-      <rect x="360" y="200" width="180" height="500" fill="#142024" opacity="0.8"/>
-      <line x1="150" y1="300" x2="330" y2="240" stroke="#77B5A2" stroke-width="2" opacity="0.6"/>
-      <line x1="360" y1="200" x2="540" y2="150" stroke="#77B5A2" stroke-width="2" opacity="0.6"/>
-    </svg>
-  </div>
-  <div class="development-text">
-    <div class="section-eyebrow">Development</div>
-    <h2>From entitlement<br>to <em>groundbreaking</em>.</h2>
-    <p>Louis Lock partners with developers from initial site selection through entitlement, financing, and delivery, always with an eye toward Seattle's evolving housing needs, including middle housing and assisted living.</p>
-    <a href="contact.html" class="text-link" style="color:var(--off-white);">Discuss a Project <span class="arrow">&#8594;</span></a>
-  </div>
-</section>
-
-<section class="cta-band reveal">
-  <div class="cta-band-inner">
-    <h2>Let's talk about<br>your next <em>acquisition</em>.</h2>
-    <p>Schedule a complimentary consultation and let's map out your commercial strategy together.</p>
-    <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+<section class="strip reveal" style="padding:110px 5vw;background:var(--off-white);">
+  <div style="max-width:760px;">
+    <div class="section-eyebrow">Straight Answer</div>
+    <h2 style="font-size:clamp(28px,3.2vw,42px);line-height:1.2;margin-bottom:18px;">This is not an <em style="color:var(--gold);font-style:italic;">instant</em> number.</h2>
+    <p style="color:var(--graphite);font-size:15px;line-height:1.85;font-weight:300;margin-bottom:16px;">Plenty of agent websites promise an instant valuation. Almost none of them deliver one. You enter an address, a form goes to an inbox, and a person follows up later. The number you were promised never appears.</p>
+    <p style="color:var(--graphite);font-size:15px;line-height:1.85;font-weight:300;margin-bottom:16px;">I would rather say what this actually is. A person prepares it, by hand, and that takes a couple of days. In exchange you get something an algorithm cannot produce: an opinion that accounts for your zoning, your lot, your alley, your view corridor, and what the block has actually been doing.</p>
+    <p style="color:var(--graphite);font-size:15px;line-height:1.85;font-weight:300;">If all you want is a fast ballpark, Zillow is free and it is right there. Come back when you want to know what the number really is.</p>
+    <p style="margin-top:34px;padding-top:22px;border-top:1px solid rgba(52,71,76,0.18);font-size:12.5px;line-height:1.7;color:var(--graphite);opacity:0.75;font-weight:300;">A comparative market analysis is an opinion of value prepared by a licensed real estate broker. It is not an appraisal and is not a substitute for one. Only a licensed appraiser can provide an appraisal. Louis Lock, Licensed Real Estate Broker, eXp Realty, LLC, Washington State.</p>
   </div>
 </section>
 
@@ -377,6 +348,7 @@
         <a href="about.html">About</a>
         <a href="resources.html">Resources</a>
         <a href="blog.html">Journal</a>
+        <a href="team.html">Meet the Team</a>
         <a href="partners.html">Partners</a>
         <a href="home-value.html">Home Value</a>
       </div>
@@ -443,8 +415,49 @@
   }, { threshold: 0.12 });
   revealEls.forEach(el => io.observe(el));
 
-  /* ---- Formspree: Newsletter Signup ---- */
+  /* ---- Formspree: Home Valuation Form ---- */
   const FORM_ENDPOINT = 'https://formspree.io/f/mdarrrad';
+
+  const valForm = document.getElementById('valuationForm');
+  const valBtn = document.getElementById('valuationSubmitBtn');
+  const valStatus = document.getElementById('valuationFormStatus');
+
+  function showStatus(el, message, isError){
+    el.style.display = 'block';
+    el.textContent = message;
+    el.style.color = isError ? '#c0392b' : 'var(--gold)';
+  }
+
+  if(valForm){
+    valForm.addEventListener('submit', async function(e){
+      e.preventDefault();
+      valBtn.disabled = true;
+      valBtn.textContent = 'Sending...';
+      valStatus.style.display = 'none';
+      try{
+        const res = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          body: new FormData(valForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if(res.ok){
+          valForm.reset();
+          showStatus(valStatus, "Got it. I'll have your analysis within two business days.", false);
+          valBtn.textContent = 'Request Sent';
+        } else {
+          showStatus(valStatus, "Something went wrong. Please email inquiry@louisklock.com directly.", true);
+          valBtn.disabled = false;
+          valBtn.textContent = 'Request My Valuation';
+        }
+      } catch(err){
+        showStatus(valStatus, "Something went wrong. Please email inquiry@louisklock.com directly.", true);
+        valBtn.disabled = false;
+        valBtn.textContent = 'Request My Valuation';
+      }
+    });
+  }
+
+  /* ---- Formspree: Newsletter Forms ---- */
   document.querySelectorAll('.nform').forEach(function(nf){
     const input = nf.querySelector('input[type="email"]');
     const btn = nf.querySelector('button');
@@ -481,5 +494,7 @@
   });
 </script>
 
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/search.js"></script>
 </body>
 </html>
